@@ -1,4 +1,3 @@
-
 [![Issues][issues-shield]][issues-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
@@ -22,8 +21,6 @@
     <a href="https://github.com/jganggini/oracle-ai/pulls">Request Feature</a>
   </p>
 </p>
-
-# 
 
 ## Introducción
 

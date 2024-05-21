@@ -195,3 +195,15 @@ A continuación se describe cómo utilizar cada uno de los archivos .py proporci
 ## Conclusión
 
 Este proyecto demuestra cómo utilizar el poder de la inteligencia artificial y el aprendizaje automático para optimizar el proceso de cobranza en una empresa. La solución desarrollada incluye la generación de datos, la clasificación de clientes, la configuración de GPU para mejorar el rendimiento y la implementación de modelos de lenguaje natural para personalizar las estrategias de cobranza. Siguiendo los pasos descritos en este archivo, puedes reproducir y adaptar esta solución a las necesidades específicas de tu organización en Oracle Cloud.
+
+
+<!-- Contacto -->
+## Contacto
+Project Link: [https://github.com/jganggini](https://github.com/jganggini)
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+[issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=for-the-badge
+[issues-url]: https://github.com/jganggini/oci-functions/issues
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+[linkedin-url]: https://www.linkedin.com/in/jganggini/

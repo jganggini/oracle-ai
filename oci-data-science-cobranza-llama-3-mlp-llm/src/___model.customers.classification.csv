@@ -1,0 +1,46 @@
+client_id,name,email,phone_number,age,income,payment_history,amount_owed,communication_preference,last_payment_date,predicted_default
+51863,Samantha Sanders,sflores@example.net,(357)720-7395x575,78,67608,late,18186,app_notification,2024-01-10,1
+90364,Andrew Bennett,rperez@example.org,216.344.6035x5225,19,43808,defaulted,19080,app_notification,2024-01-10,1
+76009,Shannon Lewis,tewing@example.org,513.692.6340,78,79484,late,18847,app_notification,2024-01-10,1
+11720,Sharon Murphy,astewart@example.org,+1-922-756-6366x318,18,43480,defaulted,18015,app_notification,2024-04-10,1
+42556,Jessica Williamson,diazmichael@example.org,001-666-765-4344x6842,77,75233,defaulted,19418,email,2024-04-25,1
+3111,Brian Brooks,nicoleayala@example.net,001-361-546-8012x6898,79,68429,late,18721,whatsapp,2024-05-10,1
+66561,Traci Torres,lkelly@example.net,383-542-7750x5270,76,63963,late,19105,app_notification,2024-02-25,1
+7632,Christopher Burns,fsantana@example.org,301-842-4448,80,57623,late,19568,sms,2024-01-25,1
+53457,Karen Velasquez,ystephens@example.com,(234)552-3689x86251,79,64922,on_time,19685,app_notification,2024-04-10,1
+73409,Angel Jackson,zclark@example.org,+1-648-641-3460x8894,78,72470,defaulted,18480,email,2024-03-10,1
+38269,Jeffery Vargas,autumnbryant@example.org,958.933.5176x373,18,38471,defaulted,19912,email,2024-02-10,1
+63834,Caitlin Chavez,bhutchinson@example.org,001-462-297-4590x11073,75,97212,defaulted,19781,app_notification,2024-02-25,1
+54210,Deborah Hall,kaitlin66@example.org,(992)807-6175x69718,77,93113,defaulted,19754,app_notification,2024-03-25,1
+71326,William Simmons,michaelsmith@example.com,829-484-4228,74,79667,late,19967,whatsapp,2024-03-10,1
+90359,Troy Moore,michele69@example.com,5114188405,77,72652,defaulted,19038,sms,2024-03-10,1
+51284,Rodney Scott,paula83@example.net,297-906-4155x440,78,60820,defaulted,18645,email,2024-04-10,1
+86864,Derrick Howard,larryparker@example.net,(921)788-2236,77,57969,defaulted,19433,sms,2024-02-25,1
+51302,Miranda Vance,scott22@example.org,937.347.3502,74,76172,on_time,18894,whatsapp,2024-02-25,1
+93640,Brian Wilson,seth18@example.org,001-669-854-1365x901,80,81268,defaulted,18601,sms,2024-03-25,1
+78668,Hunter Norton,egarrison@example.org,783-234-1605,76,75718,late,18179,sms,2024-05-25,1
+49373,Alexandra Johnson,crystalbailey@example.org,001-992-279-1760x429,76,82938,on_time,19247,sms,2024-01-25,1
+77120,Mr. Nicholas Moore Jr.,christina31@example.org,(681)215-3644x56762,76,73476,defaulted,18418,whatsapp,2024-01-25,1
+71907,Julie Campbell,antonio40@example.net,(635)910-2949,78,80408,on_time,19797,app_notification,2024-03-10,1
+89689,Anthony Gordon,arthur67@example.com,503-493-9219,78,60708,late,19538,app_notification,2024-01-25,1
+18435,Kristen Miles,vanessa92@example.com,969-785-8857x8083,80,66817,late,18688,app_notification,2024-03-10,1
+25566,William Young,jenniferschmidt@example.com,+1-343-978-5693x90401,79,81300,defaulted,17888,sms,2024-03-10,1
+96839,Amanda Jenkins,pbradshaw@example.net,407.231.8530,74,70010,defaulted,19302,sms,2024-05-25,1
+46860,Cathy Morgan,samanthahart@example.com,311.988.6197,74,77221,defaulted,19485,sms,2024-04-10,1
+47236,Jamie Robinson,lisa76@example.org,608.470.1472x593,79,68932,defaulted,18183,sms,2024-01-25,1
+21568,Katelyn Schwartz,garyvillarreal@example.net,785-280-2228,77,87699,late,19418,app_notification,2024-03-25,1
+16953,Patricia Sanchez,omarreynolds@example.net,332.435.9294x073,73,74281,defaulted,19049,app_notification,2024-05-10,1
+69674,Luis Johnson,bonnie97@example.net,001-439-769-3375x82226,73,61281,defaulted,19876,sms,2024-01-10,1
+64702,Judith Myers,rmolina@example.com,7558799209,18,42537,defaulted,18251,sms,2024-05-10,1
+86604,Shannon Vang,jasonwarner@example.com,001-398-746-6053x381,74,64324,late,19884,sms,2024-03-25,1
+67154,Brian Baker,angela54@example.org,+1-332-596-1279,76,83478,on_time,18604,sms,2024-02-25,1
+36490,Kristina Nelson,rwest@example.com,+1-677-516-2020,75,89630,on_time,19927,sms,2024-01-25,1
+72585,Jennifer Ramsey,bburch@example.net,(287)331-2558x947,80,76280,on_time,18705,email,2024-02-25,1
+39790,Samantha Phillips,hramos@example.com,+1-469-883-2112x9683,79,64470,late,19268,whatsapp,2024-02-10,1
+87533,Mr. Willie Rhodes,ubryant@example.org,549-272-5870,79,66953,defaulted,19388,email,2024-01-25,1
+34348,Spencer Benton,jameswilkinson@example.org,818.813.9526x377,76,61917,on_time,19295,sms,2024-04-10,1
+56105,Christopher Rodriguez,ncarter@example.net,302.805.9533x5171,71,62860,defaulted,19982,sms,2024-03-10,1
+35043,Charles Thomas,kevinbrady@example.net,(585)925-0037,79,68846,on_time,19317,sms,2024-03-10,1
+55868,Stephen Taylor,olsonlawrence@example.org,919-286-2296x24015,77,81917,late,19526,app_notification,2024-02-10,1
+49002,David Wright,mpena@example.org,(319)247-0115x90446,79,72340,defaulted,17791,email,2024-01-10,1
+21408,Jennifer Crosby,david40@example.com,+1-258-633-7553x35243,78,94313,defaulted,19787,email,2024-05-25,1

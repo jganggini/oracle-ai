@@ -1,9 +1,35 @@
 
-# OCI Data Science: Solución de Cobranza Inteligente
+[![Issues][issues-shield]][issues-url]
+[![LinkedIn][linkedin-shield]][linkedin-url]
+
+
+<!-- PROJECT LOGO -->
+<br />
+<p align="center">
+
+  <h2 align="center">OCI Data Science</h3>
+
+  <p align="center">
+    Solución de Cobranza Inteligente
+    <br />
+    <a href="./src"><strong>Explore the code »</strong></a>
+    <br />
+    <br />
+    <a href="https://youtu.be/@jganggini">🎬 View Demo</a>
+    ·
+    <a href="https://github.com/jganggini/oracle-ai/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/jganggini/oracle-ai/pulls">Request Feature</a>
+  </p>
+</p>
+
+# 
 
 ## Introducción
 
 Este proyecto tiene como objetivo desarrollar una solución que mejore el proceso de cobranza utilizando inteligencia artificial y técnicas de aprendizaje automático. Nos enfocaremos en identificar clientes morosos, segmentarlos y generar estrategias de cobranza personalizadas. A continuación, se detallan los pasos para configurar el entorno y ejecutar el proyecto.
+
+<img src="img/img-01.jpg" alt="Logo" width="100%">
 
 ## Requisitos Previos
 

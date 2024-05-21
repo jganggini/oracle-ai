@@ -15,7 +15,7 @@
     <a href="./src"><strong>Explore the code »</strong></a>
     <br />
     <br />
-    <a href="https://youtu.be/@jganggini">🎬 View Demo</a>
+    <a href="https://youtube.com/@jganggini">🎬 View Demo</a>
     ·
     <a href="https://github.com/jganggini/oracle-ai/issues">Report Bug</a>
     ·

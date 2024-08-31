@@ -1,0 +1,28 @@
+PUT /oci_documents
+{
+  "mappings": {
+    "properties": {
+      "obj_content": {
+        "type": "text"
+      },
+      "obj_name": {
+        "fielddata": true,
+        "type": "text"
+      },
+      "obj_page": {
+        "type": "integer"
+      },
+      "obj_type": {
+        "type": "text"
+      },
+      "obj_url": {
+        "fields": {
+          "keyword": {
+            "type": "keyword"
+          }
+        },
+        "type": "text"
+      }
+    }
+  }
+}

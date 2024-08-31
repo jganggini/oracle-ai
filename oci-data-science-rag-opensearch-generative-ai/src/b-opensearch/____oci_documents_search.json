@@ -1,0 +1,6 @@
+GET oci_documents/_search
+{
+  "query": {
+    "match_all": {}
+  }
+}

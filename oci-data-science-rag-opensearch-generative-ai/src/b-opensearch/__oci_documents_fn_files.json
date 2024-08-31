@@ -1,0 +1,12 @@
+POST /oci_documents/_search
+{
+  "_source": ["obj_name", "obj_url"],
+  "query": {
+    "bool": {
+      "must": [
+        { "match_all": {} },
+        { "term": { "obj_page": 1 } }
+      ]
+    }
+  }
+}

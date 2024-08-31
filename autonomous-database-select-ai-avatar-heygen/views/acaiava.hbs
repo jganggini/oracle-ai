@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <title>Demo</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://oacdemo-idy4hyfbs31o-ia.analytics.ocp.oraclecloud.com/public/dv/v1/embedding/standalone/embedding.js?TOKEN=true" type="application/javascript"></script>
+    <style>
+        body { font-size:"Verdana,sans-serif"!important; font-size:15px!important; }
+        a:visited { color:#fff!important; }
+        h2, h6 { font-weight:400!important; padding:0px!important; margin:10px 0!important; font-family:"Segoe UI",Arial,sans-serif!important; }
+        h2 { font-size:30px!important; }
+        h6 { font-size:16px!important; }
+        .w3-section, .w3-code { margin-top: 0px!important; }
+    </style>
+</head>
+<body>
+    {{!-- Navigation links --}}
+    <div class="w3-top">
+    <div class="w3-bar w3-black w3-card">
+        <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+        <a href="/" class="w3-bar-item w3-button w3-padding-large">HOME</a>
+        <a href="/adai" class="w3-bar-item w3-button w3-padding-large w3-hide-small">ADAI</a>
+        <a href="/adaiava" class="w3-bar-item w3-button w3-padding-large w3-hide-small">ADAI-AVATAR</a>
+        <a href="/acaiava" class="w3-bar-item w3-button w3-padding-large w3-hide-small">ACAI-AVATAR</a>
+    </div>
+    </div>
+
+    {{!-- Body --}}
+    <div class="w3-container w3-content w3-padding-32" style="max-width:800px" id="autonomous-db-ia">
+        <h2 class="w3-wide w3-center w3-padding-top-32">ACAI-AVATAR 🤖 (Analytics Cloud + AI)</h2>
+        <h6 class="w3-wide w3-center w3-opacity">Natural Language Generation (NLG)</h6>
+        <div class="w3-padding w3-small w3-center">NLG is a powerful AI feature of OAC that converts selected columns or graphical visuals into narrative text. NLG relies on an Oracle Cloud AI engine to generate narrative insights based on data, something that is not available in an on-premises environment. Note that while NLG is only possible with OAC, both OAC and OAS enable Natural Language Processing (NLP). With NLP, a user interacts with data by typing in or speaking out what their query is. <a class="w3-black" Target="_blank" href="https://docs.oracle.com/en/cloud/paas/analytics-cloud/acubi/add-language-narrative-visualization.html#GUID-237A860A-22E9-4F5A-B6A5-22DE3EA7CCAA">Read more...</a></div>
+        <div class="w3-row w3-padding-16">
+            
+            <div class="w3-card-2 w3-small w3-padding">
+                <h6 class="w3-wide w3-center w3-opacity">Oracle Analytics Cloud</h6></h6>
+                
+                <div style="height:500px; line-height: 1;">
+                    <oracle-dv project-path="/@Catalog/users/joel_ganggini/Titanic">
+                    </oracle-dv>
+                </div>                
+            </div>
+
+            <div class="w3-card-2 w3-small w3-padding w3-margin-top">
+                <h6 class="w3-wide w3-center w3-opacity">Avatar</h6>
+                
+                <table class="w3-table">
+                    <tr style="font-weight:lighter;">
+                        <th>
+                            <select class="w3-select w3-black w3-border w3-card-2 w3-center" id="translateTo">
+                                <option value="en">ENGLISH</option>
+                                <option value="es">SPANISH</option>
+                                <option value="pt">PORTUGUESE</option>
+                            </select>
+                        </th>
+                        <th>
+                            <button class="w3-button w3-black w3-card-2" type ="submit" id="start">Start <i class="fa fa-play-circle"></i></button>
+                            <button class="w3-button w3-black w3-card-2" type ="submit" id="talk" disabled>Talk <i class="fa fa-volume-up"></i></button>
+                            <button class="w3-button w3-black w3-card-2" type ="submit" id="repeat" disabled>Repeat <i class="fa fa-repeat"></i></button>
+                            <button class="w3-button w3-black w3-card-2" type ="submit" id="close" disabled>Close <i class="fa fa-times-circle"></i></button>
+                            <input type="hidden" id="taskInput">
+                        </th>
+                    </tr>
+                    <tr>
+                        <!-- HeyGen -->
+                        <th class="w3-center" style="width:40%">
+                            <video class="w3-circle" id="mediaElement" style="width:100%" autoplay></video>
+                        </th>
+                        <th>
+                            <div class="w3-code jsHigh notranslate w3-tiny cell-top" style="font-weight: normal;">
+                                <p id="status"></p>
+                            </div>
+                        </th>
+                    </tr>
+                </table>
+            </div>
+            <script type="module" src="acaiava.js"></script>            
+        </div>
+    </div>
+
+    <!-- Footer -->
+        <footer class="w3-container w3-padding-32 w3-center w3-opacity w3-light-grey w3-xlarge">
+        <p class="w3-medium">Made with ❤️ in Oracle Data & IA · Powered by <a href="https://pe.linkedin.com/in/jganggini" target="_blank">jganggini</a> · Contact</p>
+        <a href="https://pe.linkedin.com/in/jganggini" target="_blank"><i class="fa fa-linkedin-square w3-hover-opacity"></i></a>
+        <a href="https://github.com/jganggini" target="_blank"></a><i class="fa fa-github w3-hover-opacity"></i></a>
+        <a href="https://www.youtube.com/@jganggini" target="_blank"></a><i class="fa fa-youtube w3-hover-opacity"></i></a>    
+    </footer>
+
+    <script>
+        // Get bearer token from an API (e.g. Oracle API Gateway)
+        var Url = 'https://ortsleag2rnlbc23a25begrube.apigateway.us-ashburn-1.oci.customer-oci.com/v1/fn';
+        var token_request = new XMLHttpRequest();
+        token_request.open("GET", Url, false);
+        token_request.send(null);
+        {
+            if (token_request.status = 200) {
+                var idcs_token = JSON.parse(token_request.response).access_token;
+                requirejs(['jquery', 'knockout', 'obitech-application/application', 'ojs/ojcore', 'ojs/ojknockout', 'ojs/ojcomposite', 'jet-composites/oracle-dv/loader'],
+                    function($, ko, application) {
+                        application.setSecurityConfig("token", {tokenAuthFunction:
+                        function(){
+                            return idcs_token;
+                        }
+                        });
+                        ko.applyBindings();
+                    }
+                );
+            } else {
+                console.log('error ${token_request.status} ${token_request.statusText}')
+            }
+        }
+    </script>
+</body>
+
+</html>

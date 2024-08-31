@@ -1,0 +1,17 @@
+channels:
+  - conda-forge
+dependencies:
+  - python=3.8
+  - numpy
+  - pandas
+  - jupyter
+  - ipywidgets
+  - pip
+  - pip:
+      - oci
+      - oracle-ads
+      - langchain
+      - langchain-community
+      - langchain-core
+      - faiss-cpu
+      - faiss-gpu

@@ -1,0 +1,63 @@
+<h2 class="w3-wide w3-center w3-padding-top-32">Searching Data in OpenSearch 🔎</h2>
+<h6 class="w3-wide w3-center color-y">Data Architecture for Artificial Intelligence</h6>
+<div class="w3-padding w3-justify">
+    <a class="color-sb">OpenSearch</a>, almacena la información indexada. Luego las solicitudes de información son enviadas por las
+    <a class="color-o">APIs</a> de las aplicaciones desplegadas en una <a class="color-o">Virtual Machine</a>.
+</div>
+<div class="w3-row w3-padding-16">
+    <form action="/search" method="POST" onsubmit="showLoading()">
+        <table class="w3-table" style="background-color: white; color:#121e24;">
+            <tr>
+                <td style="padding:16px 8px 16px 16px;">
+                    <input autoFocus class="w3-input w3-border w3-card-2" type="text" name="search" placeholder="Enter your search..." value="{{search}}" maxlength="250" />
+                </td>
+                <td style="width:50px; padding:16px 16px 16px 8px;">
+                    <button class="w3-button w3-black w3-card-2" type ="submit">Search <i class="fa fa-search"></i></button>
+                </td>
+            </tr>
+            <tr>
+                <table class="w3-table" style="background-color: white; color:#121e24;">
+                    <thead>
+                        <tr>
+                            <th>NAME</th>
+                            <th>TYPE</th>
+                            <th>PAGE</th>
+                            <th>CONTENT</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each objs}}
+                        <tr>
+                            <td><a href="/chat" target="_blank">{{obj_name}}</a></td>
+                            <td>{{obj_type}}</td>
+                            <td>{{obj_page}}</td>
+                            <td style="padding-right:20px; text-align:justify;">
+                                <span class="short-content">{{{highlight (truncate obj_content 250) ../search}}}</span>
+                                <span class="more-content" style="display:none">{{{highlight obj_content ../search}}}</span>
+                                <span class="read-more" onclick="toggleContent(this)">[Read More (+)]</span>
+                            </td>
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+            </tr>
+        </table>
+    </form>
+</div>
+
+<script>
+    function toggleContent(element) {
+        const shortContent = element.previousElementSibling.previousElementSibling;
+        const moreContent = element.previousElementSibling;
+        
+        if (moreContent.style.display === "none") {
+            moreContent.style.display = "inline";
+            shortContent.style.display = "none";
+            element.innerHTML = "[Read Less (-)]";
+        } else {
+            moreContent.style.display = "none";
+            shortContent.style.display = "inline";
+            element.innerHTML = "[Read More (+)]";
+        }
+    }
+</script>

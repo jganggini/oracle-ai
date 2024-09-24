@@ -2,36 +2,36 @@ DECLARE
   jo json_object_t;
 BEGIN
   jo := json_object_t();
-  jo.put('user_ocid','ocid1.user.oc1..aaaaaaaagksca3u6myy2klnrts2vc5aocqfvulwik4vxkqbnxclqpflczkuq');
-  jo.put('tenancy_ocid','ocid1.tenancy.oc1..aaaaaaaaoi6b5sxlv4z773boczybqz3h2vspvvru42jysvizl77lky22ijaq');
-  jo.put('compartment_ocid','ocid1.compartment.oc1..aaaaaaaashbd7cf76dtaox4nucki3ys24ix23zlyptcm3jney5nfepds7zfa');
-  jo.put('private_key','MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQC9E20HuvMXyij3
-Z4iJJY3ep3f8QZzc8c73QDFTuR21nRlUbyPE0SSM2mrJOHkLLd0xAQjPRjWgsyXs
-yy1+Aqvd0Q5KMjm3ctBVuZI0D65klIwl9zYglV0AsMnrm0HctBhoZiP2j27GDNEU
-uPKr4EYvjKL1oqnQdI/6cuUliS6L+GTc2wYTlJGDexlFKzHI8nfkjrItnxEqACdy
-CXY1YilmT+3lky3aIfyaHasjxyHScX4BCgLA0Jpri7+VjPtMwCWyKHp/r+4bjfsB
-KaqAKpyk8QSnn6UH439V/U2iiY1qPVgZhFz191hdOIG1AuXKBw9vfFmGdmp2MImg
-0ycH+tKdAgMBAAECggEAAbCBJbO8WFbfs6MJMhbtamZOSPXzh0Xh3SbsFragvVUa
-CApPyrWggS5/P2A+mwr3eJvTW4bIRxdStdSOI4IcM9WaYXwkmxVuwLu+KRjt+TG0
-NUkJz5PsfZ6wYmddjBgcrIVWuboUxoN2zgIyqOm06gsOEB1tk9J20Hx8vHxTt7+m
-GZCZxcy1GYB3fqkAC8t8gaFGbEKlhQmrONdTM70hvKdbxMgzwPwN4uU2/o8Z1bmK
-3m7YEFVatwvczEZVHv7R3Ol2BI8hCYDguSAV8ZxMbReLZSF6tVaJM9/twtocm2NJ
-56iMoMluVpT21W+uNqNo1bNp1C+TH0Azn+hPN1LpQQKBgQDz8qAJKYd8x1JeXek5
-QzQJzJpNjHFRHi0DK/ta1ueJjU58Kb3D4PD1rfWkHe7sKInHvfXLoZ2PRwcz40LP
-iG4XzwQ0tR5uZXcnKG0TGwfeTb6ZgSIbVKO4JtLikpKJxSxtVZLCC31fmOLajYFe
-o+vSH63tTDxLNLa4YFsaNGNyvwKBgQDGasxqB2Sk5+O/e1NSwQ1WLIJb6idgW+rP
-PfJ1qHmhKlzjVWBe9npDiOCOd0oMYnu8kV5QqWvD+RLz2uNwyDGBEI1PDN1kJ/Zg
-9cKYDWxYT92SX9Aky+KwcoShzZKHiSIwHzLg+gNyd1mUnlz1sq/BBefPBo2o3LNQ
-gTJ85j79owKBgQCPXiRXviR2XN43v5F1qd1HdQuqT8O5HLbvikWq2WoyGO3rYsy3
-9dcnTBl1XnIwMJLo5OczycPDlMbS49k8Br5NF8ktANTlpJQmW0ffVp+FMsO1i4Lz
-9QZTD94YcnPUrCC0EPqzN/Vy3XNVZpyFdmj9kMizEX7N5CkOqvJfsDJSGQKBgQCW
-0id/kQ8XqoybyIqVpNkWX87XPy2fOT9LOLNMbDvIHgNtakBO7twQ6cKHiHVo5JNZ
-ysX+WknoNTQK2J954zJ+AK7pH8ZJk3bcTPMV0V5B4rNxyBLXZYNyzBm1RCXVkI/E
-NHLgQCrOn5ogNiBDQwgFmQ+Tdk/Hw7spvos6FWpcMQKBgDm/1vBpGH6PBhRXv43f
-Zj6R++ONfJLpKSxQ0ySyQUKOFtfNrirsaW/HrZ/w5N5EzPscrbzWOXFJjIzDTjlE
-GnlgqZG24PAZNm98NbSHmAaLL2ARNqd5pZDF1rIXXs+D1W3p4G2KEtK32r6IKNBd
-570On/HM2LUQaqN7NuQ4hxl0');
-  jo.put('fingerprint','04:78:62:89:8a:00:ee:f5:d5:bf:89:5d:e7:e8:52:45');
+  jo.put('user_ocid','ocid1.user.oc1..************************************************************');
+  jo.put('tenancy_ocid','ocid1.tenancy.oc1..************************************************************');
+  jo.put('compartment_ocid','ocid1.compartment.oc1..************************************************************');
+  jo.put('private_key','****************************************************************
+****************************************************************
+****************************************************************
+****************************************************************
+****************************************************************
+****************************************************************
+****************************************************************
+****************************************************************
+****************************************************************
+****************************************************************
+****************************************************************
+****************************************************************
+****************************************************************
+****************************************************************
+****************************************************************
+****************************************************************
+****************************************************************
+****************************************************************
+****************************************************************
+****************************************************************
+****************************************************************
+****************************************************************
+****************************************************************
+****************************************************************
+****************************************************************
+**********************');
+  jo.put('fingerprint','**:**:**:**:**:**:**:**:**:**:**:**:**:**:**:**');
   DBMS_VECTOR.CREATE_CREDENTIAL(
     credential_name => 'OCI_CRED',
     params          => json(jo.to_string));

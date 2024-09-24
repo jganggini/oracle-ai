@@ -1,0 +1,10 @@
+https://artifactory.oci.oraclecorp.com/ocas-service-platform-dev-pypi-local/oci.ai-speech-realtime/0.2.0/oci.ai_speech_realtime-0.2.0-py2.py3-none-any.whl
+https://artifactory.oci.oraclecorp.com/global-dev-pypi/oci-2.129.1+preview.1.1805-py3-none-any.whl
+PyAudio>=0.2.14
+websockets==11.0.3; python_version >= "3.7"
+websockets==9.1; python_version == "3.6"
+streamlit
+python-dotenv
+oracledb
+oracle-ads
+langchain

@@ -1,8 +1,0 @@
-adw23ai_high = (description= (retry_count=20)(retry_delay=3)(address=(protocol=tcps)(port=1522)(host=adb.us-ashburn-1.oraclecloud.com))(connect_data=(service_name=arj21cwbhl1zqnf_adw23ai_high.adb.oraclecloud.com))(security=(ssl_server_dn_match=yes)))
-
-adw23ai_low = (description= (retry_count=20)(retry_delay=3)(address=(protocol=tcps)(port=1522)(host=adb.us-ashburn-1.oraclecloud.com))(connect_data=(service_name=arj21cwbhl1zqnf_adw23ai_low.adb.oraclecloud.com))(security=(ssl_server_dn_match=yes)))
-
-adw23ai_medium = (description= (retry_count=20)(retry_delay=3)(address=(protocol=tcps)(port=1522)(host=adb.us-ashburn-1.oraclecloud.com))(connect_data=(service_name=arj21cwbhl1zqnf_adw23ai_medium.adb.oraclecloud.com))(security=(ssl_server_dn_match=yes)))
-
-
-

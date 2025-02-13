@@ -8,31 +8,33 @@
   <img align="center" src="img/cloud-computing-ai.svg" width="100" height="100"></img>
   <h1>Oracle AI 5 Demos in 1</h1>
 
-  <table align="center">
-    <tr style="font-size:medium;">
-      <td colspan="1">Select AI</td>
-      <td colspan="1">Select AI RAG</td>
-    </tr>
-    <tr align="center">
-      <td><img src="img/arq-Select AI.gif" width="500"></td>
-      <td><img src="img/arq-Select AI RAG.gif" width="500"></td>
-    </tr>
-    <tr style="font-size:medium;">
-      <td colspan="1">AI Speech to Text</td>
-      <td colspan="1">AI Document Understanding</td>
-    </tr>
-    <tr align="center">
-      <td><img src="img/arq-AI Speech to Text.gif" width="500"></td>
-      <td><img src="img/arq-AI Document Understanding.gif" width="500"></td>
-    </tr>
-    <tr style="font-size:medium;">
-      <td colspan="2">AI Document Multimodal</td>
-    </tr>
-    <tr align="center">
-      <td colspan="2"><img src="img/arq-AI Document Multimodal.gif" width="500"></td>
-    </tr>
-  </table>
-
+  <div align="center" style="text-align:center;">
+    <table align="center">
+      <tr style="font-size:medium;">
+        <td colspan="1">Select AI</td>
+        <td colspan="1">Select AI RAG</td>
+      </tr>
+      <tr align="center">
+        <td><img src="img/arq-Select AI.gif" width="500"></td>
+        <td><img src="img/arq-Select AI RAG.gif" width="500"></td>
+      </tr>
+      <tr style="font-size:medium;">
+        <td colspan="1">AI Speech to Text</td>
+        <td colspan="1">AI Document Understanding</td>
+      </tr>
+      <tr align="center">
+        <td><img src="img/arq-AI Speech to Text.gif" width="500"></td>
+        <td><img src="img/arq-AI Document Understanding.gif" width="500"></td>
+      </tr>
+      <tr style="font-size:medium;">
+        <td colspan="2">AI Document Multimodal</td>
+      </tr>
+      <tr align="center">
+        <td colspan="2"><img src="img/arq-AI Document Multimodal.gif" width="500"></td>
+      </tr>
+    </table>
+  </div>
+  
   <a style="font-size:large;" href="/src/">👨🏽‍💻 Explore the Code »</a>
   <br/>
   <a href="https://www.youtube.com/watch?v=6L1YmTRZNxM&list=PLMUWTQHw13gbk738EGtr0fWwi40B81qEw">🎬 View Demo</a>
@@ -59,11 +61,11 @@ Si no tiene una cuenta, regístrese en [Oracle Cloud](https://www.oracle.com/clo
       <td colspan="4">GPU & Frameworks</td>
     </tr>
     <tr align="center" >
-      <td style="background-color:gray"><img src="img/oci-generative-ai.svg" width="50" height="50"></td>
-      <td style="background-color:gray"><img src="img/oci-autonomous-database.svg" width="50" height="50"></td>
-      <td style="background-color:gray"><img src="img/oci-document-understanding.svg" width="50" height="50"></td>
-      <td style="background-color:gray"><img src="img/oci-speech.svg" width="50" height="50"></td>
-      <td ><img src="img/nvidia.svg" width="50" height="50"></td>
+      <td><img src="img/oci-generative-ai.svg" width="50" height="50"></td>
+      <td><img src="img/oci-autonomous-database.svg" width="50" height="50"></td>
+      <td><img src="img/oci-document-understanding.svg" width="50" height="50"></td>
+      <td><img src="img/oci-speech.svg" width="50" height="50"></td>
+      <td><img src="img/nvidia.svg" width="50" height="50"></td>
       <td><img src="img/meta.svg" width="50" height="50"></td>
       <td><img src="img/langchain.svg" width="50" height="50"></td>
       <td><img src="img/streamlit.svg" width="50" height="50"></td>

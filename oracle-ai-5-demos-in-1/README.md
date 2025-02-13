@@ -37,7 +37,7 @@
 
 
   <br/>
-  <h3>Building Data Architecture For AI/ML</h3>
+  <h3>Building Data Architecture For AI</h3>
   <br/>
 
   <table align="center">

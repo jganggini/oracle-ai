@@ -71,7 +71,7 @@ Si no tiene una cuenta, regístrese en [Oracle Cloud](https://www.oracle.com/clo
     <tr style="font-size:small;">
       <td>Generative AI</td>
       <td>Autonomous 23ai</td>
-      <td>Document Undestanding</td>
+      <td>Document <br/> Undestanding</td>
       <td>Speech</td>
       <td>NVidia</td>
       <td>Meta</td>

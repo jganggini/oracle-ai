@@ -1,0 +1,14 @@
+{
+  "name": "oci.data.science.rag.generative.ai",
+  "version": "1.0.0",
+  "description": "Working RAG with Generative AI",
+  "type": "module",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.18.2",
+    "express-handlebars": "^7.1.2",
+    "axios": "^1.7.2",
+    "multer": "^1.4.5-lts.1",
+    "oci-sdk": "^2.89.4"
+  }
+}

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Demo</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .w3-code {margin-top: 0px!important;margin-bottom: 0px!important;}
+    </style>
+</head>
+<body>
+    {{!-- Navigation links --}}
+    <div class="w3-top">
+    <div class="w3-bar w3-black w3-card">
+        <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+        <a href="/" class="w3-bar-item w3-button w3-padding-large">HOME</a>
+        <a href="/adai" class="w3-bar-item w3-button w3-padding-large w3-hide-small">ADAI</a>
+        <a href="/adaiava" class="w3-bar-item w3-button w3-padding-large w3-hide-small">ADAI-AVATAR</a>
+        <a href="/acaiava" class="w3-bar-item w3-button w3-padding-large w3-hide-small">ACAI-AVATAR</a>
+    </div>
+    </div>
+
+    {{!-- Body --}}
+    <div class="w3-container w3-content w3-padding-32" style="max-width:800px" id="autonomous-db-ia">
+        <h2 class="w3-wide w3-center w3-padding-top-32">ADAI 🤖 (Autonomous + AI)</h2>
+        <h6 class="w3-wide w3-center w3-opacity">Use Select AI to Generate SQL from Natural Language Prompts</h6>
+        <div class="w3-padding w3-small w3-center">You can use Large Language Models (LLMs), a type of generative AI, to interact with your database data using the Autonomous Database feature Select AI. With the help of database schema metadata added, Select AI feature includes the ability to specify a natural language prompt that is used to generate and run a SQL query on the data in your database. <a class="w3-black" Target="_blank" href="https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/sql-generation-ai-autonomous.html#GUID-9CE75F94-7455-4C09-A3F3-118C08E82B7E">Read more...</a></div>
+        <div class="w3-row w3-padding-16">
+            <form action="/adai" method="POST">
+                <fieldset>
+                    <table class="w3-table">
+                        <tr>
+                            <!-- Lista de respuestas -->
+                            <th colspan="3" style="font-weight:lighter;">
+                                <ul class="w3-ul w3-card-2 w3-border">
+                                    <li class="w3-left-align">
+                                        <div class="w3-black w3-left w3-margin-right w3-round w3-padding-small" style="padding-left:3px; padding-right:3px;">
+                                            Adai 🤖
+                                        </div>
+                                        <div class="w3-padding-small" style="width:80%; margin-left:12%;">
+                                            Hola soy Adai ¿Cuál es su consulta?
+                                        </div>
+                                    </li>
+                                </ul>
+                                <ul class="w3-ul w3-card-2 w3-border">
+                                    {{#each chat}}
+                                    <li class="w3-right-align">
+                                        <div class="w3-black w3-right w3-margin-left w3-round w3-padding-small" style="padding-left:3px; padding-right:3px;">
+                                            👤 User
+                                        </div>
+                                        <div class="w3-padding-small" style="width:80%; margin-left:8%;">
+                                            {{question}}
+                                        </div>
+                                    </li>
+                                    <li class="w3-left-align">
+                                        <div class="w3-black w3-left w3-margin-right w3-round w3-padding-small" style="padding-left:3px; padding-right:3px;">
+                                            Adai 🤖
+                                        </div>
+                                        <div class="w3-padding-small {{w3_code}}" style="width:80%; margin-left:12%;">
+                                            {{result}}
+                                        </div>
+                                    </li>            
+                                    {{/each}}
+                                </ul>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td style="width:130px;">
+                                <select class="w3-select w3-black w3-border w3-card-2 w3-center" name="parameter">
+                                    <option value="CHAT">CHAT</option>
+                                    <option value="NARRATE">NARRATE</option>
+                                    <option value="RUNSQL">RUNSQL</option>
+                                    <option value="SHOWSQL">SHOWSQL</option>
+                                </select>
+                            </td>
+                            <td>
+                                <input autoFocus class="w3-input w3-border w3-card-2" type="text" name="question" placeholder="Type your question.." required>
+                            </div>                                
+                            </td>
+                            <td style="width:50px;">
+                                <button class="w3-button w3-black w3-card-2" type ="submit">Send <i class="fa fa-paper-plane"></i></button>
+                            </td>
+                        </tr>
+                    </table>
+                </fieldset>
+            </form>
+        </div>
+
+        <div class="w3-card-2 w3-small w3-padding">
+            <h6 class="w3-wide w3-center w3-opacity">GENERATE Function</h6>
+            <div class="w3-padding">This function provides AI translation in a stateless manner. With your existing AI profile, you can use this function to perform any of the supported actions such as runsql, showsql, narrate, or chat.</div>
+            <table class="w3-table w3-striped w3-bordered">
+                <tr>
+                    <th>PARAMETER</th>
+                    <th>DESCRIPTION</th>
+                </tr>
+                <tr>
+                    <td>RUNSQL</td>
+                    <td>Run an SQL command using a natural language prompt. This is the default action and it is optional to specify.</td>
+                </tr>
+                <tr>
+                    <td>SHOWSQL</td>
+                    <td>Displays the SQL statement for a natural language prompt.</td>
+                </tr>
+                <tr>
+                    <td>NARRATE</td>
+                    <td>The output of the prompt is explained in natural language. This option sends the SQL result to the AI provider for summarizing it in natural language.</td>
+                </tr>
+                <tr>
+                    <td style="padding-bottom:25px;">CHAT</td>
+                    <td>Generates conversational responses (AI-chat).</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <!-- Footer -->
+        <footer class="w3-container w3-padding-32 w3-center w3-opacity w3-light-grey w3-xlarge">
+        <p class="w3-medium">Made with ❤️ in Oracle Data & IA · Powered by <a href="https://pe.linkedin.com/in/jganggini" target="_blank">jganggini</a> · Contact</p>
+        <a href="https://pe.linkedin.com/in/jganggini" target="_blank"><i class="fa fa-linkedin-square w3-hover-opacity"></i></a>
+        <a href="https://github.com/jganggini" target="_blank"></a><i class="fa fa-github w3-hover-opacity"></i></a>
+        <a href="https://www.youtube.com/@jganggini" target="_blank"></a><i class="fa fa-youtube w3-hover-opacity"></i></a>    
+    </footer>
+</body>
+</html>

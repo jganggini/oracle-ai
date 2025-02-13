@@ -1,0 +1,7 @@
+[DEFAULT]
+user=ocid1.user.oc1..**************************************************
+fingerprint=**:**:**:**:**:**:**:**:**:**:**:**:**:**:**:**
+tenancy=ocid1.tenancy.oc1..**********************************************************
+region=us-chicago-1
+key_file=C:\Users\opc\.oci\key.pem
+compartment_id=ocid1.compartment.oc1..********************************************************

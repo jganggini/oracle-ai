@@ -1,0 +1,9 @@
+{
+    "data": {
+        "resourceName": "example.docx",
+        "additionalDetails": {
+            "namespace": "<Namespace>",
+            "bucketName": "<Bucket Name>"
+        }
+    }
+}

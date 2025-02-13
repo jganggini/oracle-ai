@@ -1,0 +1,13 @@
+POST /oci_documents/_search
+{
+  "query": {
+    "query_string": {
+      "query": "*<Enter your search...>*",
+      "fields": ["obj_content"]
+    }
+  },
+  "sort": [
+    { "obj_name": { "order": "asc" }},
+    { "obj_page": { "order": "asc" }}
+  ]
+}

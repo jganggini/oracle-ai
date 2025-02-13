@@ -1,0 +1,36 @@
+<h2 class="w3-wide w3-center w3-padding-top-32">Event-Driver Architecture 🔥 Oracle Cloud</h2>
+<h6 class="w3-wide w3-center color-y">Data Architecture for Artificial Intelligence</h6>
+<div class="w3-padding w3-justify">
+    Los documentos cargados en el <a class="color-y">Bucket</a> desencadena un <a class="color-y">Events</a>, que activa Functions se encarga de procesar los archivos para subirlos a <a class="color-sb">OpenSeaarch</a>, 
+    este servicio facilita las busquedas. Los documentos que son escaneados son analizados con Document Understanding.
+</div>
+<div class="w3-row w3-padding-16">
+    <form action="/upload" method="POST" enctype="multipart/form-data" onsubmit="showLoading()">
+        <table class="w3-table" style="background-color: white; color:#121e24;">
+            <tr>
+                <td style="padding:16px 8px 16px 16px;">
+                    <input autoFocus class="w3-input w3-border w3-card-2" type="file" id="file" name="file" placeholder="Select file..." accept=".doc,.docx,.xls,.xlsx,.pdf,.jpg,.rtf" onchange="myFiles()" required/>
+                    <p class="w3-small">Valid formats: DOC, DOCX, XLS, XLSX, PDF, JPG, RTF <a class="color-r">(Max. 50M)</a></p>
+                    <p class="w3-small" id="files"></p>
+                </td>
+                <td style="width:50px; padding:16px 16px 16px 8px;">
+                    <button class="w3-button w3-black w3-card-2" type="submit">Upload <i class="fa fa-upload"></i></button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+<script>
+  function myFiles() {
+    const x = document.getElementById("file");
+    const txt = x.files.length ? 
+      Array.from(x.files).map((file, i) => `
+        <strong>${i + 1}. Document</strong><br/>
+        Name: <a class='color-r'>${file.name}</a><br/>
+        Size: <a class='color-r'>${file.size} bytes</a><br/>
+      `).join('') : 
+      "Select one or more files.";
+    document.getElementById("files").innerHTML = txt;
+  }
+</script>

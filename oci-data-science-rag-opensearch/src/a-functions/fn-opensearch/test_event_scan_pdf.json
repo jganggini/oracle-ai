@@ -1,0 +1,9 @@
+{
+    "data": {
+        "resourceName": "example_scan.pdf",
+        "additionalDetails": {
+            "namespace": "<Namespace>",
+            "bucketName": "<Bucket Name>"
+        }
+    }
+}

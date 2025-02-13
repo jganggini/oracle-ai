@@ -1,0 +1,9 @@
+{
+    "data": {
+        "resourceName": "example.xlsx",
+        "additionalDetails": {
+            "namespace": "<Namespace>",
+            "bucketName": "<Bucket Name>"
+        }
+    }
+}

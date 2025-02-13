@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>Oracle AI: RAG Demo</title>
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
+        <style>
+            body       { font-family: "Lato", sans-serif; background-color: #121e24; color: #e4dabd; }
+            .color-y   { color: #f9cc61 }
+            .color-r   { color: #c64533 }
+            .color-sb  { color: #00B0F0 }
+            .color-g   { color: #BFFF00 }
+            .color-o   { color: #F59D56 }
+            .color-w   { color: white   }
+            .text      { white-space: pre-wrap; }
+            .w3-black, .w3-hover-black:hover { background-color: #c64533 !important; color: white !important; }
+            .w3-button:hover { background-color:#f9cc61 !important; color: #121e24 !important; }
+            .w3-bar .w3-button.active { background-color: #f9cc61 !important; color: #121e24 !important; }
+            .loading-screen { position: fixed; width: 100%; height: 100%; top: 0; left: 0; background: rgba(0, 0, 0, 0.5); z-index: 9999; display: flex; align-items: center; justify-content: center; }
+            .loading-content { text-align: center; }
+            .w3-table tr:nth-child(even) { background-color: #f9cc61; }    
+            .more-content { display: none; }
+            .read-more { color: #c64533; cursor: pointer; }
+            .highlight { color: #ffffff; background-color: #c64533; }
+        </style>
+        <script src="/main.js"></script>
+    </head>
+    <body>
+        {{!-- Navigation links --}}
+        <div class="w3-top">
+        <div class="w3-bar w3-black w3-card">
+            <img src="/img/logo_oracle.png" alt="Icono" class="w3-bar-item w3-padding-large icono" style="width:82px;">
+            <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+            <a href="/" id="home-link" class="w3-bar-item w3-button w3-padding-large">HOME</a>
+            <a href="/upload" id="upload-link" class="w3-bar-item w3-button w3-padding-large w3-hide-small">1️⃣ UPLOAD</a>
+            <a href="/search" id="search-link" class="w3-bar-item w3-button w3-padding-large w3-hide-small">2️⃣ SEARCH</a>
+            <a href="/chat" id="chat-link" class="w3-bar-item w3-button w3-padding-large w3-hide-small">3️⃣ CHAT</a>
+        </div>
+        </div>
+
+        {{!-- Body --}}
+        <div class="w3-container w3-content w3-padding-32" style="max-width:900px" id="autonomous-db-ia">
+            {{{body}}}
+        </div>
+
+        <!-- Footer -->
+        <footer class="w3-container w3-padding-64 w3-center w3-opacity w3-light-grey w3-xlarge" style="background-color:#302c29 !important; color: #e4dabd !important;">
+            <p class="w3-medium">Made with ❤️ in Oracle AI · Powered by <a href="https://pe.linkedin.com/in/jganggini" target="_blank">Joel Ganggini</a></p>
+            <a href="https://pe.linkedin.com/in/jganggini" target="_blank"><i class="fa fa-linkedin-square w3-hover-opacity"></i></a>
+            <a href="https://github.com/jganggini" target="_blank"><i class="fa fa-github w3-hover-opacity"></i></a>
+            <a href="https://www.youtube.com/@jganggini" target="_blank"><i class="fa fa-youtube w3-hover-opacity"></i></a>    
+        </footer>
+
+        <!-- Loading Screen -->
+        <div id="loadingScreen" class="loading-screen" style="display: none;">
+            <div class="loading-content" style="padding-top:25%;">
+                <i class="fa fa-spinner fa-spin color-w" style="font-size:50px;"></i>
+                <p class="color-w">Loading...</p>
+            </div>
+        </div>
+
+    </body>
+</html>

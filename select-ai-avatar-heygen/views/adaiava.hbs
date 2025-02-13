@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Demo</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .w3-code {margin-top: 0px!important;margin-bottom: 0px!important;}
+    </style>
+</head>
+<body>
+    {{!-- Navigation links --}}
+    <div class="w3-top">
+    <div class="w3-bar w3-black w3-card">
+        <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+        <a href="/" class="w3-bar-item w3-button w3-padding-large">HOME</a>
+        <a href="/adai" class="w3-bar-item w3-button w3-padding-large w3-hide-small">ADAI</a>
+        <a href="/adaiava" class="w3-bar-item w3-button w3-padding-large w3-hide-small">ADAI-AVATAR</a>
+        <a href="/acaiava" class="w3-bar-item w3-button w3-padding-large w3-hide-small">ACAI-AVATAR</a>
+    </div>
+    </div>
+
+    {{!-- Body --}}
+    <div class="w3-container w3-content w3-padding-32" style="max-width:800px" id="autonomous-db-ia">
+        <h2 class="w3-wide w3-center w3-padding-top-32">ADAI-AVATAR 🤖 (Autonomous + AI)</h2>
+        <h6 class="w3-wide w3-center w3-opacity">Use Select AI to Generate SQL from Natural Language Prompts</h6>
+        <div class="w3-padding w3-small w3-center">You can use Large Language Models (LLMs), a type of generative AI, to interact witd your database data using tde Autonomous Database feature Select AI. Witd tde help of database schema metadata added, Select AI feature includes tde ability to specify a natural language prompt tdat is used to generate and run a SQL query on tde data in your database. <a class="w3-black" Target="_blank" href="https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/sql-generation-ai-autonomous.html#GUID-9CE75F94-7455-4C09-A3F3-118C08E82B7E">Read more...</a></div>
+        <div class="w3-row w3-padding-16">
+
+            <table class="w3-table">
+                <tr>
+                    <!-- Lista de respuestas -->
+                    <td colspan="3" style="font-weight:lighter;">
+                        <table class="w3-table">
+                            <tr style="font-weight:lighter;">
+                                <td>
+                                    
+                                </td>
+                                <td>
+                                    <button class="w3-button w3-black w3-card-2" type ="submit" id="start">Start <i class="fa fa-play-circle"></i></button>
+                                    <button class="w3-button w3-black w3-card-2" type ="submit" id="repeat" disabled>Repeat <i class="fa fa-repeat"></i></button>
+                                    <button class="w3-button w3-black w3-card-2" type ="submit" id="close" disabled>Close <i class="fa fa-times-circle"></i></button>
+                                    <input type="hidden" id="taskInput">
+                                </td>
+                            </tr>
+                            <tr>
+                                <!-- HeyGen -->
+                                <td class="w3-center" style="width:40%">
+                                    <video class="w3-circle" id="mediaElement" style="width:100%" autoplay></video>
+                                    <a id="result">
+                                </td>
+                                <td>
+                                    <div class="w3-code jsHigh notranslate w3-tiny cell-top" style="font-weight: normal;">
+                                        <p id="status"></p>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                        <script type="module" src="acaiava.js"></script>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table class="w3-table">
+                            <tr style="font-weight:lighter;">
+                                <td>
+                                    <input autoFocus class="w3-input w3-border w3-card-2" type="text" name="question" id="question" placeholder="Type your question.." required>                           
+                                </td>
+                                <td style="width:50px;">
+                                    <button class="w3-button w3-black w3-card-2" type ="submit" id="send">Send <i class="fa fa-paper-plane"></i></button>
+                                    <script src="adaiva.js"></script>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="w3-panel w3-blue w3-small" id="display" style="display:none;">
+                            <h6>Message</h6>
+                            <p id="message"></p>
+                        </div> 
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+        <footer class="w3-container w3-padding-32 w3-center w3-opacity w3-light-grey w3-xlarge">
+        <p class="w3-medium">Made witd ❤️ in Oracle Data & IA · Powered by <a href="https://pe.linkedin.com/in/jganggini" target="_blank">jganggini</a> · Contact</p>
+        <a href="https://pe.linkedin.com/in/jganggini" target="_blank"><i class="fa fa-linkedin-square w3-hover-opacity"></i></a>
+        <a href="https://gitdub.com/jganggini" target="_blank"></a><i class="fa fa-gitdub w3-hover-opacity"></i></a>
+        <a href="https://www.youtube.com/@jganggini" target="_blank"></a><i class="fa fa-youtube w3-hover-opacity"></i></a>    
+    </footer>
+</body>
+</html>

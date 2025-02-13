@@ -6,14 +6,12 @@
     2. OCI Bucket
     ---------------------------------------------
 """
-import oci
-import oracledb
+
 
 import os
 import sys
 import subprocess
 import shutil
-from dotenv import load_dotenv
 
 # Ruta absoluta o relativa al archivo .env
 file_path = os.path.dirname(__file__)
@@ -31,9 +29,6 @@ if not os.path.exists(env_path):
 if not os.path.exists(wall_path):
     print(f'El archivo wallet no existe en: {wall_path}')
     sys.exit(1)
-
-# Cargar variables del archivo .env
-load_dotenv(dotenv_path=env_path)
 
 def get_private_key(key_file_path):
     # Leer y procesar la clave privada
@@ -54,46 +49,6 @@ def get_private_key(key_file_path):
     private_key = private_key.replace('\n', '').replace("'", "''")
     
     return private_key
-
-
-# Default: C:\Users\jeggg\.oci\config
-config = oci.config.from_file()
-
-# CONFIG: CONDA
-con_conda_env_name          = os.getenv('CON_CONDA_ENV_NAME')
-
-# ADW23ai: Admin
-con_adb_adm_user_name       = os.getenv('CON_ADB_ADM_USER_NAME')
-con_adb_adm_password        = os.getenv('CON_ADB_ADM_PASSWORD')
-con_adb_adm_service_name    = os.getenv('CON_ADB_ADM_SERVICE_NAME')
-
-# ADW23ai: Developer
-con_adb_dev_user_name         = os.getenv('CON_ADB_DEV_USER_NAME')
-con_adb_dev_password          = os.getenv('CON_ADB_DEV_PASSWORD')
-con_adb_dev_service_name      = os.getenv('CON_ADB_DEV_SERVICE_NAME')
-con_adb_dev_comparment_ocid   = os.getenv('CON_GEN_AI_COMPARTMENT_ID')
-con_adb_dev_c_user_ocid       = config['user']
-con_adb_dev_c_tenancy_ocid    = config['tenancy']
-con_adb_dev_c_private_key     = get_private_key(config['key_file'])
-con_adb_dev_c_fingerprint     = config['fingerprint']
-con_adb_dev_c_credential_name = os.getenv('CON_ADB_DEV_C_CREDENTIAL_NAME')
-con_adb_dev_c_model           = os.getenv('CON_ADB_DEV_C_MODEL')
-
-# ADW23ai: Wallet
-con_adb_wallet_location     = os.getenv('CON_ADB_WALLET_LOCATION')
-con_adb_wallet_password     = os.getenv('CON_ADB_WALLET_PASSWORD')
-
-# Bucket
-con_adb_buk_namespacename   = os.getenv('CON_ADB_BUK_NAMESPACENAME')
-con_adb_buk_name            = os.getenv('CON_ADB_BUK_NAME')
-
-# Generative AI
-con_gen_ai_region           = os.getenv('CON_GEN_AI_REGION')
-con_gen_ai_service_endpoint = os.getenv('CON_GEN_AI_SERVICE_ENDPOINT')
-con_gen_ai_emb_model_url    = os.getenv('CON_GEN_AI_EMB_MODEL_URL')
-con_gen_ai_emb_model_id     = os.getenv('CON_GEN_AI_EMB_MODEL_ID')
-con_gen_ai_chat_model_id    = os.getenv('CON_GEN_AI_CHAT_MODEL_ID')
-con_gen_ai_compartment_id   = os.getenv('CON_GEN_AI_COMPARTMENT_ID')
 
 # 
 def conda(command, message):
@@ -116,6 +71,48 @@ def conda(command, message):
 
 #
 def exec(user, file_name, message):
+    import oci
+    import oracledb
+    from dotenv import load_dotenv
+
+    load_dotenv(dotenv_path=env_path)
+    
+    # Default: C:\Users\jeggg\.oci\config
+    config = oci.config.from_file()
+
+    # ADW23ai: Admin
+    con_adb_adm_user_name       = os.getenv('CON_ADB_ADM_USER_NAME')
+    con_adb_adm_password        = os.getenv('CON_ADB_ADM_PASSWORD')
+    con_adb_adm_service_name    = os.getenv('CON_ADB_ADM_SERVICE_NAME')
+
+    # ADW23ai: Developer
+    con_adb_dev_user_name         = os.getenv('CON_ADB_DEV_USER_NAME')
+    con_adb_dev_password          = os.getenv('CON_ADB_DEV_PASSWORD')
+    con_adb_dev_service_name      = os.getenv('CON_ADB_DEV_SERVICE_NAME')
+    con_adb_dev_comparment_ocid   = os.getenv('CON_GEN_AI_COMPARTMENT_ID')
+    con_adb_dev_c_user_ocid       = config['user']
+    con_adb_dev_c_tenancy_ocid    = config['tenancy']
+    con_adb_dev_c_private_key     = get_private_key(config['key_file'])
+    con_adb_dev_c_fingerprint     = config['fingerprint']
+    con_adb_dev_c_credential_name = os.getenv('CON_ADB_DEV_C_CREDENTIAL_NAME')
+    con_adb_dev_c_model           = os.getenv('CON_ADB_DEV_C_MODEL')
+
+    # ADW23ai: Wallet
+    con_adb_wallet_location     = os.getenv('CON_ADB_WALLET_LOCATION')
+    con_adb_wallet_password     = os.getenv('CON_ADB_WALLET_PASSWORD')
+
+    # Bucket
+    con_adb_buk_namespacename   = os.getenv('CON_ADB_BUK_NAMESPACENAME')
+    con_adb_buk_name            = os.getenv('CON_ADB_BUK_NAME')
+
+    # Generative AI
+    con_gen_ai_region           = os.getenv('CON_GEN_AI_REGION')
+    con_gen_ai_service_endpoint = os.getenv('CON_GEN_AI_SERVICE_ENDPOINT')
+    con_gen_ai_emb_model_url    = os.getenv('CON_GEN_AI_EMB_MODEL_URL')
+    con_gen_ai_emb_model_id     = os.getenv('CON_GEN_AI_EMB_MODEL_ID')
+    con_gen_ai_chat_model_id    = os.getenv('CON_GEN_AI_CHAT_MODEL_ID')
+    con_gen_ai_compartment_id   = os.getenv('CON_GEN_AI_COMPARTMENT_ID')
+
     # Leer el archivo SQL
     with open(os.path.join(file_path, 'autonomous_database', user, file_name), 'r') as file:
         query = file.read()
@@ -199,16 +196,27 @@ def main():
     conda(f'conda run -n base pip install --force-reinstall python-dotenv --no-warn-script-location oci oracledb --upgrade --user', 
           f'[OK] PIP INSTALL PREREQUISITES IN CONDA BASE..................[ CONDA_BASE ]')
 
+    # Cargar variables del archivo .env
+    from dotenv import load_dotenv
+    load_dotenv(dotenv_path=env_path)
+    
+    # CONFIG: CONDA
+    con_conda_env_name    = os.getenv('CON_CONDA_ENV_NAME')
+    # ADW23ai: Admin
+    con_adb_adm_user_name = os.getenv('CON_ADB_ADM_USER_NAME')
+    # ADW23ai: Developer
+    con_adb_dev_user_name = os.getenv('CON_ADB_DEV_USER_NAME')
+
     conda(f'conda remove --name {con_conda_env_name} --all -y', 
           f'[OK] CONDA REMOVE......................................[ CONDA_ENVIRONMENT ]')
           
     conda(f'conda create -n {con_conda_env_name} python=3.10 -y', 
           f'[OK] CONDA CREATE ENVIRONMENT..........................[ CONDA_ENVIRONMENT ]')
     
-    conda(f'conda run -n {con_conda_env_name} conda install conda-forge::python-graphviz -y', 
+    conda(f'conda run -n {con_conda_env_name} conda install -c conda-forge python-graphviz -y', 
           f'[OK] CONDA INSTALL GRAPHVIZ................................[ CONDA_INSTALL ]')
     
-    conda(f'conda run -n {con_conda_env_name} pip install --force-reinstall -r requirements.txt', 
+    conda(f'conda run -n {con_conda_env_name} pip install -r requirements.txt', 
           f'[OK] PIP INSTALL REQUIREMENTS..........................[ CONDA_ENVIRONMENT ]')
     
     print(f'\n                                                     [ VALIDATION ][ TOOLS ]')
@@ -276,8 +284,9 @@ def main():
     
     # Streamlit
     os.chdir(os.path.normpath(os.path.abspath(os.path.join(os.getcwd(), "..", "app"))))
-    subprocess.run(f'conda run -n {con_conda_env_name} streamlit run app.py --server.port 8501', shell=True, check=True)
-
+    conda(f'conda run -n {con_conda_env_name} streamlit run app.py --server.port 8501', 
+          f'[OK] OPEN STREAMLIT (http://localhost:8501)..........................[ APP ]')
+    
 if __name__ == '__main__':
     main()
 

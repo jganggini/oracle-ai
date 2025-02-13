@@ -46,5 +46,5 @@
     --
 
     INSERT INTO modules (module_id, module_name, module_folder, module_src_type, module_trg_type, module_vector_store)
-    VALUES (5, 'AI Document Multimodal', 'module-ai-document-multimodal', 'PDF, PNG, JPEG, JPG', 'MD', 1);
+    VALUES (5, 'AI Document Multimodal', 'module-ai-document-multimodal', 'JPEG', 'MD', 1);
     --

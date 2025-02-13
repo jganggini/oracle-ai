@@ -337,7 +337,7 @@ if 'username' in st.session_state:
                 st.session_state["chat-tokens"]     = 0
                 st.session_state["chat-save"]       = []
                 st.session_state["chat_session_id"] = ""
-                st.session_state["chat-history"]    = None
+                st.session_state["chat-history"]    = []
                 st.rerun()
 
         with col3:

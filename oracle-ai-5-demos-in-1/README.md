@@ -6,39 +6,7 @@
 <br />
 <div align="center" style="text-align:center;">
   <img align="center" src="img/cloud-computing-ai.svg" width="100" height="100"></img>
-  <h1>Oracle AI 5 Demos en 1</h1>
-
-  
-  <table align="center">
-    <tr style="font-size:medium;">
-      <td colspan="4">Oracle Cloud</td>
-      <td colspan="4">GPU & Frameworks</td>
-    </tr>
-    <tr align="center">
-      <td><img src="img/oci-generative-ai.svg" width="50" height="50"></td>
-      <td><img src="img/oci-autonomous-database.svg" width="50" height="50"></td>
-      <td><img src="img/oci-document-understanding.svg" width="50" height="50"></td>
-      <td><img src="img/oci-speech.svg" width="50" height="50"></td>
-      <td><img src="img/nvidia.svg" width="50" height="50"></td>
-      <td><img src="img/meta.svg" width="50" height="50"></td>
-      <td><img src="img/langchain.svg" width="50" height="50"></td>
-      <td><img src="img/streamlit.svg" width="50" height="50"></td>
-    </tr>
-    <tr style="font-size:small;">
-      <td>Generative AI</td>
-      <td>Autonomous 23ai</td>
-      <td>Document Undestanding</td>
-      <td>Speech</td>
-      <td>Meta</td>
-      <td>LangChain</td>
-      <td>Streamlit</td>
-    </tr>
-  </table>
-
-
-  <br/>
-  <h3>Building Data Architecture For AI</h3>
-  <br/>
+  <h1>Oracle AI 5 Demos in 1</h1>
 
   <table align="center">
     <tr style="font-size:medium;">
@@ -83,6 +51,36 @@ Este documento describe los pasos necesarios para instalar y configurar el proye
 Si no tiene una cuenta, regístrese en [Oracle Cloud](https://www.oracle.com/cloud/).
 
 ### 2. Servicios Necesarios
+
+<div align="center" style="text-align:center;">
+  <table align="center">
+    <tr style="font-size:medium;">
+      <td colspan="4">Oracle Cloud</td>
+      <td colspan="4">GPU & Frameworks</td>
+    </tr>
+    <tr align="center" >
+      <td style="background-color:gray"><img src="img/oci-generative-ai.svg" width="50" height="50"></td>
+      <td style="background-color:gray"><img src="img/oci-autonomous-database.svg" width="50" height="50"></td>
+      <td style="background-color:gray"><img src="img/oci-document-understanding.svg" width="50" height="50"></td>
+      <td style="background-color:gray"><img src="img/oci-speech.svg" width="50" height="50"></td>
+      <td ><img src="img/nvidia.svg" width="50" height="50"></td>
+      <td><img src="img/meta.svg" width="50" height="50"></td>
+      <td><img src="img/langchain.svg" width="50" height="50"></td>
+      <td><img src="img/streamlit.svg" width="50" height="50"></td>
+    </tr>
+    <tr style="font-size:small;">
+      <td>Generative AI</td>
+      <td>Autonomous 23ai</td>
+      <td>Document Undestanding</td>
+      <td>Speech</td>
+      <td>NVidia</td>
+      <td>Meta</td>
+      <td>LangChain</td>
+      <td>Streamlit</td>
+    </tr>
+  </table>
+</div>
+
 #### a) Autonomous Database
 - Despliegue una instancia de Autonomous Database en OCI.
 
@@ -91,7 +89,6 @@ Si no tiene una cuenta, regístrese en [Oracle Cloud](https://www.oracle.com/clo
 
 #### c) Configurar Políticas de IAM
 Se deben configurar las siguientes políticas para permitir el acceso adecuado:
-
 
 ###### OCI Document Understanding
 ```plaintext

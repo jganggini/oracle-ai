@@ -55,7 +55,7 @@
     </tr>
     <tr align="center">
       <td><img src="img/arq-AI Speech to Text.gif" width="500"></td>
-      <td><img src="img/arq-AI Document Multimodal.gif" width="500"></td>
+      <td><img src="img/arq-AI Document Understanding.gif" width="500"></td>
     </tr>
     <tr style="font-size:medium;">
       <td colspan="2">AI Document Multimodal</td>

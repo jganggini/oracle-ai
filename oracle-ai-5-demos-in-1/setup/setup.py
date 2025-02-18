@@ -57,7 +57,7 @@ def conda(command, message):
             subprocess.run(command, shell=True, check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
             print(message)
         else:
-            subprocess.run(command, shell=True, check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+            subprocess.run(command, shell=True, check=True, stdout=subprocess.DEVNULL, stderr=subprocess.PIPE)
             print(message)
     except subprocess.CalledProcessError as e:
         error_output = e.stderr.decode('utf-8') if e.stderr else str(e)

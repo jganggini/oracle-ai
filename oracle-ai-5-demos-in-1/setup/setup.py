@@ -6,8 +6,6 @@
     2. OCI Bucket
     ---------------------------------------------
 """
-
-
 import os
 import sys
 import subprocess
@@ -111,7 +109,6 @@ def exec(user, file_name, message):
     con_gen_ai_emb_model_url    = os.getenv('CON_GEN_AI_EMB_MODEL_URL')
     con_gen_ai_emb_model_id     = os.getenv('CON_GEN_AI_EMB_MODEL_ID')
     con_gen_ai_chat_model_id    = os.getenv('CON_GEN_AI_CHAT_MODEL_ID')
-    CON_COMPARTMENT_ID   = os.getenv('CON_COMPARTMENT_ID')
 
     # Leer el archivo SQL
     with open(os.path.join(file_path, 'autonomous_database', user, file_name), 'r') as file:

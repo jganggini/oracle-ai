@@ -52,24 +52,25 @@ if 'username' in st.session_state:
 
         # Display chat messages from history on app rerun
         for message in st.session_state["chat-select-ai-rag"]:
-            with st.chat_message(message["role"]):
-                if message["role"] == "assistant":
+            if message["role"] == "ai":
+                with st.chat_message(message["role"], avatar="images/avatar/meta.svg"):
                     # Render each section of the stored response
                     annotated_text(annotation("Narrate", message["narrate_time"], background="#484c54", color="#ffffff"))
                     st.markdown(message["narrate"])
-                else:
+            else:
+                with st.chat_message(message["role"], avatar=":material/psychology:"):
                     st.markdown(message["content"])
 
         # React to user input
-        
         if prompt := st.chat_input("What is up?"):
             # Display user message in chat message container
-            st.chat_message("user").markdown(prompt)
+            st.chat_message("human", avatar=":material/psychology:").markdown(prompt)
+            
             # Add user message to chat history
-            st.session_state["chat-select-ai-rag"].append({"role": "user", "content": prompt})
+            st.session_state["chat-select-ai-rag"].append({"role": "human", "content": prompt})
 
             # Create placeholders for progressive updates
-            assistant_message = st.chat_message("assistant")
+            assistant_message = st.chat_message("ai", avatar="images/avatar/meta.svg")
             placeholder = assistant_message.empty()
 
             try:
@@ -100,7 +101,7 @@ if 'username' in st.session_state:
                         
                     # Add assistant response to chat history with structured data
                     st.session_state["chat-select-ai-rag"].append({
-                        "role"         : "assistant",
+                        "role"         : "ai",
                         "narrate"      : narrate,
                         "narrate_time" : narrate_time
                     })

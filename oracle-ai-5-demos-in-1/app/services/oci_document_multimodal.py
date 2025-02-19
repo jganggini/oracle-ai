@@ -239,7 +239,7 @@ class DocumentMultimodalService:
         llm = ChatOCIGenAI(
             model_id         = str(df_agents["MODEL_NAME"].values[0]),
             service_endpoint = os.getenv("CON_GEN_AI_SERVICE_ENDPOINT"),
-            compartment_id   = os.getenv("CON_GEN_AI_COMPARTMENT_ID"),
+            compartment_id   = os.getenv("CON_COMPARTMENT_ID"),
             provider         = str(df_agents["MODEL_PROVIDER"].values[0]),
             is_stream        = False,
             auth_type        = os.getenv("CON_GEN_AI_AUTH_TYPE"),
@@ -252,7 +252,7 @@ class DocumentMultimodalService:
                 "presence_penalty"  : float(df_agents["AGENT_PRESENCE_PENALTY"].values[0])
             }
         )
-        
+
         #
         prompt_template = ChatPromptTemplate.from_messages(
             [
@@ -282,7 +282,5 @@ class DocumentMultimodalService:
 
         # Combine Markdown content from all pages
         markdown_output = "".join(result)
-
-        print(f"\n\nRespuesta MD: {markdown_output}\n\n")
         
         return markdown_output

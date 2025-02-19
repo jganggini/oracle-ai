@@ -189,17 +189,6 @@ if 'username' in st.session_state:
             chat_tokens_rate_message  = chat_ux_history.messages[i+3].content
             chat_chat_tokens_message  = chat_ux_history.messages[i+4].content
             chat_total_tokens_message = chat_ux_history.messages[i+5].content
-            
-            print(f"")
-
-            # HumanMessage
-            print(f"chat_human_prompt_message: {chat_human_prompt_message}")
-            #print(f"chat_human_prompt_image_message: {chat_human_prompt_image_message}")
-            # AI message
-            print(f"chat_ai_answer_message: {chat_ai_answer_message}")    
-            print(f"chat_tokens_rate_message: {chat_tokens_rate_message}")
-            print(f"chat_chat_tokens_message: {chat_chat_tokens_message}")
-            print(f"chat_total_tokens_message: {chat_total_tokens_message}")
 
             with st.chat_message("human", avatar=":material/psychology:"):
                 st.markdown(chat_human_prompt_message)

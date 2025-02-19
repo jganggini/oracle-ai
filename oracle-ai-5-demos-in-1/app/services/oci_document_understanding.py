@@ -47,7 +47,7 @@ class DocumentUnderstandingService:
         try:
             # Map language to code
             language = language_map.get(language)
-            print(language)
+            
             # Configure input and output locations
             object_location = oci.ai_document.models.ObjectLocation(
                 namespace_name = os.getenv('CON_ADB_BUK_NAMESPACENAME'),
@@ -63,15 +63,15 @@ class DocumentUnderstandingService:
             # Configure processor job details
             processor_job_details = oci.ai_document.models.CreateProcessorJobDetails(
                 display_name     = str(uuid.uuid4()),
-                compartment_id   = config["compartment_id"],
+                compartment_id   = os.getenv('CON_COMPARTMENT_ID'),
                 input_location   = oci.ai_document.models.ObjectStorageLocations(object_locations=[object_location]),
                 output_location  = output_location,
                 processor_config = oci.ai_document.models.GeneralProcessorConfig(
                     features =[
-                        oci.ai_document.models.DocumentTextExtractionFeature(generate_searchable_pdf=True)
-                        #,oci.ai_document.models.DocumentTableExtractionFeature()
-                        #,oci.ai_document.models.DocumentKeyValueExtractionFeature()
-                        #,oci.ai_document.models.DocumentLanguageClassificationFeature()
+                        oci.ai_document.models.DocumentTextExtractionFeature(generate_searchable_pdf=True),
+                        #oci.ai_document.models.DocumentTableExtractionFeature(),
+                        #oci.ai_document.models.DocumentKeyValueExtractionFeature(),
+                        #oci.ai_document.models.DocumentLanguageClassificationFeature(),
                     ],
                     language = language
                 )
@@ -86,7 +86,7 @@ class DocumentUnderstandingService:
                 wait_for_states=[oci.ai_document.models.ProcessorJob.LIFECYCLE_STATE_SUCCEEDED]
             )
             processor_job = response.data
-
+        
             if processor_job:
 
                 # Construct paths for processed objects

@@ -89,7 +89,7 @@ def exec(user, file_name, message):
     con_adb_dev_user_name         = os.getenv('CON_ADB_DEV_USER_NAME')
     con_adb_dev_password          = os.getenv('CON_ADB_DEV_PASSWORD')
     con_adb_dev_service_name      = os.getenv('CON_ADB_DEV_SERVICE_NAME')
-    con_adb_dev_comparment_ocid   = os.getenv('CON_GEN_AI_COMPARTMENT_ID')
+    con_adb_dev_comparment_ocid   = os.getenv('CON_COMPARTMENT_ID')
     con_adb_dev_c_user_ocid       = config['user']
     con_adb_dev_c_tenancy_ocid    = config['tenancy']
     con_adb_dev_c_private_key     = get_private_key(config['key_file'])
@@ -111,7 +111,7 @@ def exec(user, file_name, message):
     con_gen_ai_emb_model_url    = os.getenv('CON_GEN_AI_EMB_MODEL_URL')
     con_gen_ai_emb_model_id     = os.getenv('CON_GEN_AI_EMB_MODEL_ID')
     con_gen_ai_chat_model_id    = os.getenv('CON_GEN_AI_CHAT_MODEL_ID')
-    con_gen_ai_compartment_id   = os.getenv('CON_GEN_AI_COMPARTMENT_ID')
+    CON_COMPARTMENT_ID   = os.getenv('CON_COMPARTMENT_ID')
 
     # Leer el archivo SQL
     with open(os.path.join(file_path, 'autonomous_database', user, file_name), 'r') as file:
@@ -222,6 +222,12 @@ def main():
     print(f'\n                                                     [ VALIDATION ][ TOOLS ]')
     print(f'----------------------------------------------------------------------------')
 
+    conda(f'python tool.config.py', 
+          f'[OK] CONFIG FILE..............................................[ VALID_TOOL ]')
+    
+    conda(f'python tool.bucket.py', 
+          f'[OK] BUCKET ACCESS............................................[ VALID_TOOL ]')
+    
     conda(f'python tool.autonomos.connection.py', 
           f'[OK] AUTONOMOUS DATABASE CONNECTION...........................[ VALID_TOOL ]')
 

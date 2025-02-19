@@ -1,3 +1,4 @@
+import oci
 import re
 import os
 import time
@@ -41,8 +42,11 @@ class FunctionService:
     
     @staticmethod
     def get_valid_url_path(file_name: str) -> str:
+        config = oci.config.from_file()
+        region = config["region"]
+        
         return (
-            f"https://objectstorage.{os.getenv('CON_ADB_BUK_REGION')}.oraclecloud.com/"
+            f"https://objectstorage.{region}.oraclecloud.com/"
             f"n/{os.getenv('CON_ADB_BUK_NAMESPACENAME')}/"
             f"b/{os.getenv('CON_ADB_BUK_NAME')}/o/{file_name}"
         )

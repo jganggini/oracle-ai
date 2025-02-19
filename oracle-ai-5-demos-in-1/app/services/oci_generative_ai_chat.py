@@ -44,7 +44,7 @@ class GenerativeAIService:
         llm = ChatOCIGenAI(
             model_id         = str(df_modules["MODEL_NAME"].values[0]),
             service_endpoint = os.getenv("CON_GEN_AI_SERVICE_ENDPOINT"),
-            compartment_id   = os.getenv("CON_GEN_AI_COMPARTMENT_ID"),
+            compartment_id   = os.getenv("CON_COMPARTMENT_ID"),
             provider         = str(df_modules["MODEL_PROVIDER"].values[0]),
             is_stream        = True,  # streaming de tokens si lo deseas
             auth_type        = os.getenv("CON_GEN_AI_AUTH_TYPE"),
@@ -96,7 +96,6 @@ class GenerativeAIService:
         
         question_answer_prompt = None
         if input_imagen:
-            print(1)
             question_answer_prompt = ChatPromptTemplate.from_messages(
                 [
                     SystemMessagePromptTemplate(
@@ -122,7 +121,6 @@ class GenerativeAIService:
             )
 
         else:
-            print(2)
             # Prompt para combinar documentos (StuffDocumentsChain)
             question_answer_prompt = ChatPromptTemplate.from_messages([
                 ("system", str(df_modules["AGENT_PROMPT_MESSAGE"].values[0])),

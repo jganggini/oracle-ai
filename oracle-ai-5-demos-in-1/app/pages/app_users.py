@@ -72,14 +72,9 @@ if "username" in st.session_state and "user_id" in st.session_state:
                     )
                     component.get_success(msg, ":material/add_row_below:")
 
-                    print(f"new_modules: {new_modules}")
-
                     # Construir una lista de módulos relevantes y el string `module_id_all`
                     relevant_modules = [module_id for module_id in new_modules if module_id not in [0, 1, 2]]
                     module_id_all = ",".join(map(str, relevant_modules))
-
-                    print(f"relevant_modules: {relevant_modules}")
-                    print(f"module_id_all: {module_id_all}")
 
                     for module_id in new_modules:
                         # Módulo 1: Ejecutar acciones específicas

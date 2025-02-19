@@ -80,6 +80,8 @@ class BucketService:
                 object_name    = object_name
             )
 
+            print(object_name)
+
             # Check response status
             if response.status == 204:
                 component.get_toast(f"The '{name_from_path}' file was deleted successfully.", ":material/delete:") if msg else None

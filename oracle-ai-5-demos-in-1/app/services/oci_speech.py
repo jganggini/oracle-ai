@@ -104,7 +104,7 @@ class SpeechService:
                 while True:
                     get_transcription_job_response = aiservicespeech_client.get_transcription_job(
                         transcription_job_id = transcription_job.id)
-                    #print(get_transcription_job_response.data.lifecycle_state, " at ", time.ctime())
+                    
                     if get_transcription_job_response.data.lifecycle_state == "SUCCEEDED":
                         break
                     time.sleep(5)

@@ -60,17 +60,12 @@ if "username" in st.session_state and "user_id" in st.session_state:
                         old_modules = set(old_modules)
                         new_modules = set(new_modules)
 
-                        print(f"old_modules: {old_modules}")
-                        print(f"new_modules: {new_modules}")
-
                         # Evaluar módulo 1: Crear o eliminar
                         if (1 in old_modules) and (1 not in new_modules):
-                            print("Eliminar módulo 1")
                             msg = db_select_ai_service.drop_user(selected_user_id)
                             component.get_toast(msg, icon=":material/database:")
 
                         if (1 not in old_modules) and (1 in new_modules):
-                            print("Crear módulo 1")
                             sel_ai_password = df_users.loc[df_users["USER_ID"] == selected_user_id, "USER_SEL_AI_PASSWORD"].values[0]
                             db_select_ai_service.drop_user(selected_user_id)
                             msg = db_select_ai_service.create_user(selected_user_id, sel_ai_password)
@@ -80,16 +75,13 @@ if "username" in st.session_state and "user_id" in st.session_state:
                         for module_id in {3, 4, 5}:
                             # Módulo relevante: Eliminar
                             if (module_id in old_modules) and (module_id not in new_modules):
-                                print(f"Eliminar módulo: {module_id}")
                                 msg = db_module_service.delete_agent(selected_user_id, module_id)
                                 component.get_toast(msg, icon=":material/database:")
 
                             # Módulo relevante: Crear
                             if (module_id not in old_modules) and (module_id in new_modules):
-                                print(f"Crear módulo: {module_id}")
                                 msg = db_module_service.create_agent(selected_user_id, module_id)
-                                component.get_toast(msg, icon=":material/database:")
-                                
+                                component.get_toast(msg, icon=":material/database:")                                
 
                         db_user_service.get_all_users_cache(force_update=True)
                     else:

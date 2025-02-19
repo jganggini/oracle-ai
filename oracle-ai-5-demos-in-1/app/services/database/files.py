@@ -181,7 +181,6 @@ class FileService:
                     WHERE FILE_ID = {file_id}
                 """)
             self.conn.commit()
-            # print(f"Written chunk from {i} to {i + chunk_size}")
 
         return f"File extraction has been updated successfully."
 

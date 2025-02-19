@@ -185,6 +185,14 @@ O descargue el ZIP del repositorio y extraiga su contenido.
   region=<region>
   ```
 
+Cuando usas el archivo de configuración (config) de OCI, el parámetro region define la región predeterminada para tus operaciones. Para acceder a un bucket en Object Storage, debes asegurarte de estar apuntando a la misma región donde se encuentra ese bucket. Si tu config especifica, por ejemplo, region = `us-ashburn-1`, pero tu bucket está creado en `us-phoenix-1`, tendrás que:
+
+- Cambiar la región en el archivo config a `us-phoenix-1`, o
+- Crear un perfil adicional en ese mismo archivo con la región correcta, o
+- Sobrescribir la región a través de un parámetro/flag en la CLI o variable de entorno cuando ejecutes los comandos.
+
+En otras palabras, el valor de region en el config determina a qué región se dirigirán tus comandos por defecto. Si tu bucket está en otra región, no podrás manejarlo usando el perfil que apunte a la región equivocada; deberás indicar la región correcta de alguna de las formas mencionadas.
+
 ### 5. Configurar Variables de Entorno
 Edite el archivo `.env` ubicado en `oracle-ai-5-demos-in-1/app/.env` y agregue los valores necesarios.
 

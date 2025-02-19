@@ -1,5 +1,6 @@
 import oracledb
 import os
+import sys
 from dotenv import load_dotenv
 
 # Cambiar al directorio `app/`
@@ -27,4 +28,4 @@ try:
     connection.close()
 
 except Exception as e:
-    print("Failed to connect:", e)
+    sys.exit(e)

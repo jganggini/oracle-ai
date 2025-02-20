@@ -190,8 +190,11 @@ def main():
     conda(f'conda --version', 
           f'[OK] CHECK CONDA.............................................[ CHECK_CONDA ]')
 
-    conda(f'conda run -n base pip install --force-reinstall python-dotenv --no-warn-script-location oci oracledb --upgrade --user', 
-          f'[OK] PIP INSTALL PREREQUISITES IN CONDA BASE..................[ CONDA_BASE ]')
+    conda(f'conda run -n base pip install --force-reinstall oci oracledb --upgrade --user', 
+      f'[OK] PIP INSTALL OCI & ORACLEDB IN CONDA BASE.....................[ CONDA_BASE ]')
+
+    conda(f'conda run -n base pip install --force-reinstall python-dotenv --no-warn-script-location --upgrade --user', 
+        f'[OK] PIP INSTALL PYTHON-DOTENV IN CONDA BASE....................[ CONDA_BASE ]')
 
     # Cargar variables del archivo .env
     from dotenv import load_dotenv

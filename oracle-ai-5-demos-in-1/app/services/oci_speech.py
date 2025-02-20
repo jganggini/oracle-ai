@@ -83,7 +83,7 @@ class SpeechService:
             # Configure processor job details
             transcription_job_details = oci.ai_speech.models.CreateTranscriptionJobDetails(
                 display_name    = str(uuid.uuid4()),
-                compartment_id  = config["compartment_id"],
+                compartment_id  = os.getenv('CON_COMPARTMENT_ID'),
                 description     = "App",
                 model_details   = model_details,
                 input_location  = input_location,

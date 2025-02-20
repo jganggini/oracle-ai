@@ -104,7 +104,7 @@ def exec(user, file_name, message):
     con_adb_buk_name            = os.getenv('CON_ADB_BUK_NAME')
 
     # Generative AI
-    con_gen_ai_region           = os.getenv('CON_GEN_AI_REGION')
+    con_gen_ai_region           = config['region']
     con_gen_ai_service_endpoint = os.getenv('CON_GEN_AI_SERVICE_ENDPOINT')
     con_gen_ai_emb_model_url    = os.getenv('CON_GEN_AI_EMB_MODEL_URL')
     con_gen_ai_emb_model_id     = os.getenv('CON_GEN_AI_EMB_MODEL_ID')

@@ -1,0 +1,11 @@
+ID_Offer,Description,Offer_Type,Conditions
+1,"Bono de Bienvenida","Descuento","Aplicable solo a nuevas cuentas"
+2,"Tasa 1.5% anual","Tasa Preferencial","Solo para clientes premium con buen historial"
+3,"Cashback 5%","Cashback","Maximo 50 USD por mes"
+4,"Regalo de 200 millas","Beneficios de Viaje","Con tarjeta co-branding"
+5,"Descuento en comisiones","Comisiones","Aplica solo a transferencias internacionales"
+6,"Tasa fija 0.8%","Tasa Preferencial","Valida para hipotecarios a 20 años"
+7,"Exoneración de costos de apertura","Costos","Aplica a cuentas corrientes"
+8,"Descuento 2% en préstamos","Préstamos","Hasta un monto de 10000 USD"
+9,"Puntos dobles en compras","Programa de Puntos","Aplicable en tarjetas de crédito platino"
+10,"Seguro gratis por 3 meses","Seguro","Vigencia limitada de 6 meses"

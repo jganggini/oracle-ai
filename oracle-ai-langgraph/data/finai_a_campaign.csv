@@ -1,0 +1,11 @@
+ID_Campaign,Name,Description,Start_Date,End_Date,Status
+1,"Campaña Ahorros 2025","Fomentar depósitos a plazo fijo",01-JAN-25,31-MAR-25,Activa
+2,"Campaña Préstamos Hipotecarios","Tasa preferencial para primera vivienda",01-FEB-25,30-JUN-25,Planeada
+3,"Campaña Tarjeta Premium","Beneficios exclusivos en tarjeta de crédito",15-MAR-25,15-APR-25,Activa
+4,"Campaña Cuenta Jóvenes","Incentivo a jóvenes para abrir cuenta",15-JAN-25,15-MAY-25,Activa
+5,"Campaña Navidad","Promociones especiales navideñas",01-DEC-24,10-JAN-25,Finalizada
+6,"Campaña Verano","Créditos con tasa reducida",01-JUN-25,31-AUG-25,Planeada
+7,"Campaña Inversión","Promoción en fondos de inversión",01-APR-25,30-SEP-25,Activa
+8,"Campaña Viajes","Crédito personal para viajes",01-MAY-25,01-JUL-25,Planeada
+9,"Campaña CMR","Tarjeta de crédito con puntos extras",01-JUL-25,30-SEP-25,Planeada
+10,"Campaña Black Friday","Ofertas bancarias para Black Friday",20-NOV-25,30-NOV-25,Planeada

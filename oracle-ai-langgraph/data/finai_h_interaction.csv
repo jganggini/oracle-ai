@@ -1,0 +1,11 @@
+ID_Interaction,ID_Customer,ID_Campaign,ID_Channel,Date_Time,Response,Notes
+1,1,1,2,02-JAN-25 10.15.00.000000 AM,"Aceptado","Cliente interesado en la tasa preferencial"
+2,2,1,1,03-JAN-25 02.30.00.000000 PM,"Pendiente","Reenvió información por email"
+3,3,2,3,10-FEB-25 09.00.00.000000 AM,"Rechazado","Cliente no califica para la hipoteca"
+4,1,3,2,16-MAR-25 11.45.00.000000 AM,"Aceptado","Cliente aceptó beneficios en tarjeta premium"
+5,5,5,1,15-DEC-24 04.00.00.000000 PM,"Sin respuesta","Enviado correo sin respuesta"
+6,7,7,4,05-APR-25 09.15.00.000000 AM,"Pendiente","SMS de confirmación"
+7,2,4,5,20-JAN-25 06.20.00.000000 PM,"Aceptado","Consulta por chat y apertura de cuenta"
+8,9,10,6,25-NOV-25 12.00.00.000000 PM,"Aceptado","Promoción Black Friday vía WhatsApp"
+9,4,1,2,05-JAN-25 10.00.00.000000 AM,"Rechazado","No le interesó la campaña de ahorros"
+10,10,9,5,15-AUG-25 02.10.00.000000 PM,"Pendiente","Cliente en chat revisando tarjeta CMR"

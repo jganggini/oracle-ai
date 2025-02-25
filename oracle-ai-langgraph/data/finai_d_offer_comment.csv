@@ -1,0 +1,5 @@
+Column Name,Comment
+ID_Offer,"Primary Key, Identificador único de la oferta."
+Description,"Descripción breve de la oferta."
+Offer_Type,"Tipo de oferta (Descuento, Préstamo, Cashback, etc.)."
+Conditions,"Condiciones aplicables para esta oferta."

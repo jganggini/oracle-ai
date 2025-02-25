@@ -1,0 +1,11 @@
+ID_Segment,Name,Criteria
+1,"Clientes Premium","Saldo > 50000 OR ingresosMensuales > 5000"
+2,"Clientes Jóvenes","Edad BETWEEN 18 AND 25"
+3,"Clientes Hipotecarios","Con creditoHipotecario = True"
+4,"Clientes Morosos","TieneAtrasos = True"
+5,"Empleados","EsEmpleadoBanco = True"
+6,"Clientes Rurales","Zona = 'Rural'"
+7,"Clientes Urbanos","Zona = 'Urbana'"
+8,"Clientes Pensionados","Edad >= 65"
+9,"Nuevos Clientes","Antiguedad < 6 meses"
+10,"Clientes PyME","TipoCliente = 'Empresa Pequeña'"

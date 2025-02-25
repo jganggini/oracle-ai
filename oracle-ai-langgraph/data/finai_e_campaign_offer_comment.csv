@@ -1,0 +1,5 @@
+Column Name,Comment
+ID_Campaign_Offer,"Primary Key, Identificador único de la relación campaña-oferta."
+ID_Campaign,"Foreign Key, Relacionado con ID_Campaign en finai_a_campaign."
+ID_Offer,"Foreign Key, Relacionado con ID_Offer en finai_d_offer."
+Notes,"Notas adicionales sobre la relación campaña-oferta."

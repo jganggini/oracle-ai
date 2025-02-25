@@ -1,0 +1,3 @@
+Column Name,Comment
+ID_Channel,"Identificador único del canal de comunicación."
+Name,"Nombre o descripción del canal (Email, Teléfono, WhatsApp, etc.)."

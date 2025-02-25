@@ -1,0 +1,3 @@
+Column Name,Comment
+ID_Campaign,"Foreign Key, Relacionado con ID_Campaign en finai_a_campaign."
+ID_Segment,"Foreign Key, Relacionado con ID_Segment en finai_b_segment."

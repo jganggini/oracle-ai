@@ -165,24 +165,16 @@ class SelectAIService:
         Returns:
             str: The generated chat response.
         """ 
+        prompt_escaped = prompt.replace("'", "''")
         
-        # Replace single quotes to avoid SQL syntax issues
-        prompt = prompt.replace("'", "''")
-
-        # Escape percentage signs to prevent formatting errors
-        prompt = prompt.replace("%", "%%")
-        
-        # Construct the SQL query to generate the chat response
         query = f"""
             SELECT
                 DBMS_CLOUD_AI.GENERATE(
-                prompt       => '{prompt} /** Format the response in markdown. Do not underline titles. Just focus on the database tables. Answer in {language}. If you do not know the answer, answer imperatively and exactly: ''NNN.'' **/',
+                prompt       => '{prompt_escaped} /** Format the response in markdown. Do not underline titles. Just focus on the database tables. Answer in {language}. If you do not know the answer, answer imperatively and exactly: ''NNN.'' **/',
                 profile_name => '{profile_name}',
                 action       => '{action}') AS CHAT
             FROM DUAL
         """
-
-        # Execute the query and return the chat response
         return pd.read_sql(query, con=self.conn)["CHAT"].iloc[0].read()
     
     def get_tables_cache(self, user_id, force_update=False):

@@ -1,0 +1,13 @@
+ID_Campaign_Offer,ID_Campaign,ID_Offer,Notes
+1,1,2,"Tasa preferencial con restricción"
+2,1,3,"Adicional a la tasa 1.5% incluye seguro"
+3,2,1,"Campaña con bono y descuentos"
+4,3,5,"Aplica exoneración a los clientes con segment 2"
+5,5,9,"Ofrece puntos dobles para navidad"
+6,6,6,"Tasa fija para la campaña de verano"
+7,7,1,"Nueva campaña con bono de bienvenida"
+8,8,5,"Descuento en comisiones + bono"
+9,9,7,"Exoneración para créditos"
+10,10,10,"Seguro gratis en inversión"
+11,2,2,"Tasa preferencial en campaña 2"
+12,4,4,"Regalo de millas por campaña 4"

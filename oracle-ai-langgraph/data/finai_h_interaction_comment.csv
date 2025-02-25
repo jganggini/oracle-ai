@@ -1,0 +1,8 @@
+Column Name,Comment
+ID_Interaction,"Primary Key, Identificador único de la interacción."
+ID_Customer,"Foreign Key, Relacionado con ID_Customer en finai_f_customer."
+ID_Campaign,"Foreign Key, Relacionado con ID_Campaign en finai_a_campaign."
+ID_Channel,"Foreign Key, Relacionado con ID_Channel en finai_g_channel."
+Date_Time,"Fecha y hora de la interacción."
+Response,"Respuesta del cliente en la interacción."
+Notes,"Notas adicionales sobre la interacción."

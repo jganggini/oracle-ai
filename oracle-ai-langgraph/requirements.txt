@@ -1,0 +1,12 @@
+oci
+python-dotenv
+oracle-ads
+oracledb
+pandas
+
+langchain
+langchain-community
+langgraph
+langchain-openai
+
+copilotkit

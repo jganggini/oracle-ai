@@ -1,0 +1,7 @@
+Column Name,Comment
+ID_Customer,"Primary Key, Identificador único del cliente."
+First_Name,"Nombre del cliente."
+Last_Name,"Apellido del cliente."
+Email,"Correo electrónico del cliente."
+Phone,"Número de teléfono del cliente."
+Address,"Dirección del cliente."

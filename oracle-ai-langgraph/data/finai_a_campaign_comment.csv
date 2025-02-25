@@ -1,0 +1,7 @@
+Column Name,Comment
+ID_Campaign,"Primary Key, Identificador único de la campaña."
+Name,"Nombre de la campaña."
+Description,"Descripción de la campaña."
+Start_Date,"Fecha de inicio de la campaña."
+End_Date,"Fecha de finalización de la campaña."
+Status,"Estado de la campaña (Activa, Planeada, Finalizada, etc.)."

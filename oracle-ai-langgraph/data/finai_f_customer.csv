@@ -1,0 +1,11 @@
+ID_Customer,First_Name,Last_Name,Email,Phone,Address
+1,"Juan","Pérez","juan.perez@example.com","555-1111","Calle 1 #10-20"
+2,"María","Gómez","maria.gomez@example.com","555-2222","Avenida 2 #20-30"
+3,"Carlos","López","carlos.lopez@example.com","555-3333","Carrera 3 #30-40"
+4,"Lucía","Rodríguez","lucia.rodriguez@example.com","555-4444","Calle 4 #40-50"
+5,"Andrés","Ramírez","andres.ramirez@example.com","555-5555","Avenida 5 #50-60"
+6,"Diana","Martínez","diana.martinez@example.com","555-6666","Carrera 6 #60-70"
+7,"Pedro","Sánchez","pedro.sanchez@example.com","555-7777","Calle 7 #70-80"
+8,"Ana","Torres","ana.torres@example.com","555-8888","Avenida 8 #80-90"
+9,"Sofía","Castro","sofia.castro@example.com","555-9999","Carrera 9 #90-100"
+10,"Miguel","Vargas","miguel.vargas@example.com","555-1010","Calle 10 #100-110"

@@ -1,0 +1,4 @@
+Column Name,Comment
+ID_Segment,"Primary Key, Identificador único del segmento."
+Name,"Nombre del segmento de clientes."
+Criteria,"Criterios para clasificar a los clientes en este segmento."

@@ -52,6 +52,8 @@ Este documento describe los pasos necesarios para instalar y configurar el proye
 ### 1. Cuenta en Oracle Cloud Infrastructure (OCI)
 Si no tiene una cuenta, regístrese en [Oracle Cloud](https://www.oracle.com/cloud/).
 
+✅ Recomendación: Para garantizar compatibilidad con todos los servicios requeridos, elige una región como `us-chicago-1`.
+
 ### 2. Servicios Necesarios
 
 <div align="center" style="text-align:center;">
@@ -92,13 +94,13 @@ Si no tiene una cuenta, regístrese en [Oracle Cloud](https://www.oracle.com/clo
 #### c) Configurar Políticas de IAM
 Se deben configurar las siguientes políticas para permitir el acceso adecuado:
 
-###### OCI Document Understanding
+###### c.1) OCI Document Understanding
 ```plaintext
 Allow any-user to manage ai-service-document-family in tenancy
 ```
 Read more: [About Document Understanding Policies](https://docs.oracle.com/en-us/iaas/Content/document-understanding/using/about_document-understanding_policies.htm).
 
-###### OCI Speech
+###### c.2) OCI Speech
 ```plaintext
 Allow any-user to manage ai-service-speech-family in tenancy
 Allow any-user to read tag-namespaces in tenancy
@@ -106,14 +108,13 @@ Allow any-user to inspect tag-namespaces in tenancy
 ```
 Read more: [About Speech Policies](https://docs.oracle.com/en-us/iaas/Content/speech/using/policies.htm).
 
-###### OCI Generative AI
+###### c.3) OCI Generative AI
 ```plaintext
-Allow any-user to manage ai-service-generative-family in tenancy
+Allow any-user to manage generative-ai-family in tenancy
 ```
 Read more: [Getting Access to Generative AI](https://docs.oracle.com/en-us/iaas/Content/generative-ai/iam-policies.htm).
 
-
-##### Bucket
+##### c.4) Bucket
 ```plaintext
 Allow any-user to read buckets in tenancy
 Allow any-user to manage object-family in tenancy

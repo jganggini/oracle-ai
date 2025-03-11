@@ -201,12 +201,14 @@ Edite el archivo `.env` ubicado en `oracle-ai-5-demos-in-1/app/.env` y agregue l
 Ejecute:
 ```bash
 cd oracle-ai-5-demos-in-1
+cd setup
 python setup.py
 ```
 
 ### 7. Ejecion Manual
 #### **Windows:**
 ```bash
+cd oracle-ai-5-demos-in-1
 cd app
 conda activate <env_name>
 streamlit run app.py --server.port 8501

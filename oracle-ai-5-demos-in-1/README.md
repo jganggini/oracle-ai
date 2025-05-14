@@ -19,7 +19,7 @@
         <td><img src="img/arq-Select AI RAG.gif" width="500"></td>
       </tr>
       <tr style="font-size:medium;">
-        <td colspan="1">AI Speech to Text</td>
+        <td colspan="1">AI Speech to Text + PII 🆕</td>
         <td colspan="1">AI Document Understanding</td>
       </tr>
       <tr align="center">

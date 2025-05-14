@@ -224,6 +224,13 @@ streamlit run app.py --server.port 8501
 ## Nota
 Siguiendo estos pasos, el entorno estará listo para ejecutar las 5 demos de AI en Oracle Cloud.
 
+## Actualizaciones
+
+- ✅ **PII Detection Module:** Se integró el módulo [`open_anonymizer_engine.py`](/app/services/open_anonymizer_engine.py) para la detección de información sensible (PII) en las transcripciones generadas por OCI Speech to Text. Ahora se generan dos archivos:
+  - `output.srt`: archivo original.
+  - `output_pii.srt`: versión anonimizada.
+
+- 🔧 **Dependencias:** Se actualizaron las librerías definidas en [`requirements.txt`](/setup/requirements.txt).
 ## Video
 
 <p align="left">

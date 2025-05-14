@@ -15,9 +15,9 @@
             CROSS JOIN dbms_vector_chain.utl_to_chunks(
                 a.TEXT,
                 json('{
-                    "by"        : "words",
-                    "max"       : "150",
-                    "overlap"   : "15",
+                    "by"        : "characters",
+                    "max"       : "512",
+                    "overlap"   : "51",
                     "split"     : "recursively",
                     "language"  : "'|| a.LANGUAGE ||'",
                     "normalize" : "all"

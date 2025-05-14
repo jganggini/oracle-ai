@@ -34,9 +34,9 @@
     --
 
     INSERT INTO modules (module_id, module_name, module_folder, module_src_type, module_trg_type)
-    VALUES (2, 'Select AI RAG', 'module-select-ai-rag', 'TXT, HTML', 'Autonomous Database');
+    VALUES (2, 'Select AI RAG', 'module-select-ai-rag', 'TXT, HTML, DOC, JSON, XML', 'Autonomous Database');
     --
-
+    
     INSERT INTO modules (module_id, module_name, module_folder, module_src_type, module_trg_type, module_vector_store)
     VALUES (3, 'AI Document Understanding', 'module-ai-document-understanding', 'PDF, JPG, PNG, TIFF', 'PDF, JSON', 1);
     --

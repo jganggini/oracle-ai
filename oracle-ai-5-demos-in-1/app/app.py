@@ -1,6 +1,7 @@
 from datetime import datetime
 import streamlit as st
 import fitz
+import re
 
 import components as component
 import services.database as database
@@ -15,6 +16,7 @@ select_ai_rag_service         = service.SelectAIRAGService()
 document_undestanding_service = service.DocumentUnderstandingService()
 speech_service                = service.SpeechService()
 document_multimodal           = service.DocumentMultimodalService()
+anomaly_engine_service        = service.AnalyzerEngineService()
 db_file_service               = database.FileService()
 db_doc_service                = database.DocService()
 utl_function_service          = utils.FunctionService()
@@ -56,7 +58,7 @@ if "username" in st.session_state and "user_id" in st.session_state:
     comment_data_editor = None
 
     # Get Modules
-    df_modules = db_module_service.get_modules_cache(user_id)[lambda df: (df["AGENT_TYPE"].isin(['Chat']) | df["AGENT_TYPE"].isna())]
+    df_modules = db_module_service.get_modules_cache(user_id).drop_duplicates("MODULE_ID")
     df_agents  = db_module_service.get_modules_cache(user_id, force_update=True)[lambda df: (df["MODULE_VECTOR_STORE"] == 1) & (df["AGENT_TYPE"].isin(['Extraction']))]
 
     if not df_modules.empty:
@@ -108,6 +110,19 @@ if "username" in st.session_state and "user_id" in st.session_state:
                     index   = list(language_map.keys()).index(language)
                 )
 
+                selected_pii = None
+                if selected_module_id in [4]:
+                    # Radio: OCI Language
+                    selected_pii = st.radio(
+                        "Enable detecting Personal Identifiable Information (PII)?",
+                        options=[True, False],
+                        index=1,
+                        format_func=lambda x: "Yes" if x else "No",
+                        horizontal=True
+                    )
+                else:
+                    selected_pii = False
+                    
                 selected_uploaded = None
                 if selected_module_id==4:
                     # Radio: Uploaded
@@ -153,6 +168,7 @@ if "username" in st.session_state and "user_id" in st.session_state:
                             options=["Single", "Double"] if file_extension == "pdf" else ["Single"]
                         )
 
+                    
 
                     # Radio: Target Type
                     trg_type = st.radio(
@@ -216,14 +232,15 @@ if "username" in st.session_state and "user_id" in st.session_state:
                         if upload_file:
                             # Set Variables
                             file_src_file_name = utl_function_service.get_valid_url_path(file_name=bucket_file_name)
-                            file_src_size      = uploaded_file.size if uploaded_file else uploaded_record.size
+                            file_src_size      = (uploaded_file.size if uploaded_file else uploaded_record.size)
                             file_trg_obj_name  = (
                                 utl_function_service.get_valid_table_name(schema=f"SEL_AI_USER_ID_{user_id}", file_name=file_name)
                                 if trg_type == "Autonomous Database"
                                 else f"{file_src_file_name.rsplit('.', 1)[0]}_trg.{trg_type.lower()}"
                             )
                             file_trg_language       = language_map[selected_language_file]
-                            
+                            file_trg_pii            = 0
+
                             # Insert File
                             msg, file_id = db_file_service.insert_file(
                                 file_name,
@@ -233,7 +250,8 @@ if "username" in st.session_state and "user_id" in st.session_state:
                                 file_src_size,
                                 file_src_strategy,
                                 file_trg_obj_name,
-                                file_trg_language
+                                file_trg_language,
+                                file_trg_pii
                             )
                             component.get_toast(msg, icon=":material/database:")
                             
@@ -292,7 +310,7 @@ if "username" in st.session_state and "user_id" in st.session_state:
                                     file_trg_tot_pages      = 1
                                     file_trg_tot_characters = len(str(data))
                                     file_trg_tot_time       = utl_function_service.track_time(0)
-                                    file_trg_language       = language_map[selected_language_file]                              
+                                    file_trg_language       = language_map[selected_language_file]
                                 case 5:
                                     object_name = bucket_file_name
                                     strategy    = file_src_strategy
@@ -309,8 +327,7 @@ if "username" in st.session_state and "user_id" in st.session_state:
                                     file_trg_tot_pages      = 1
                                     file_trg_tot_characters = len(str(data))
                                     file_trg_tot_time       = utl_function_service.track_time(0)
-                                    file_trg_language       = language_map[selected_language_file]   
-
+                                    file_trg_language       = language_map[selected_language_file]  
 
                             # Update Extraction
                             file_trg_tot_time = utl_function_service.track_time(0)
@@ -322,6 +339,50 @@ if "username" in st.session_state and "user_id" in st.session_state:
                                 file_trg_tot_time,
                                 file_trg_language
                             )
+
+                            # PII
+                            if selected_pii:
+                                # Set Variables
+                                file_trg_obj_name   = f"{file_src_file_name.rsplit('.', 1)[0]}_trg_pii.srt"
+                                file_trg_pii        = (1 if selected_pii else 0)
+
+                                # Insert File
+                                msg, file_id = db_file_service.insert_file(
+                                    file_name,
+                                    user_id,
+                                    module_id,
+                                    file_src_file_name,
+                                    file_src_size,
+                                    file_src_strategy,
+                                    file_trg_obj_name,
+                                    file_trg_language,
+                                    file_trg_pii
+                                )
+                                component.get_toast(msg, icon=":material/database:")
+
+                                object_name = bucket_file_name
+                                msg_module, data = anomaly_engine_service.create(
+                                    object_name,
+                                    language,
+                                    file_id,
+                                    data
+                                )
+                                file_trg_obj_name       = file_trg_obj_name
+                                file_trg_tot_pages      = 1
+                                file_trg_tot_characters = len(str(data))
+                                file_trg_tot_time       = utl_function_service.track_time(0)
+                                file_trg_language       = language_map[selected_language_file]
+
+                                # Update Extraction
+                                file_trg_tot_time = utl_function_service.track_time(0)
+                                db_file_service.update_file(
+                                    file_id,
+                                    file_trg_obj_name,
+                                    file_trg_tot_pages,
+                                    file_trg_tot_characters,
+                                    file_trg_tot_time,
+                                    file_trg_language
+                                )
 
                             db_module_service.get_modules_files_cache(user_id, force_update=True)
                             db_file_service.get_all_files_cache(user_id, force_update=True)
@@ -390,6 +451,10 @@ if "username" in st.session_state and "user_id" in st.session_state:
                 ),
                 "FILE_TRG_LANGUAGE": st.column_config.Column(
                     "NLS",
+                    disabled=True
+                ),
+                "FILE_TRG_PII": st.column_config.Column(
+                    "PII",
                     disabled=True
                 ),
                 "FILE_TRG_TOT_PAGES": st.column_config.Column(

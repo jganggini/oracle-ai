@@ -1,19 +1,12 @@
 import os
 
-from langchain_community.chat_models.oci_generative_ai import ChatOCIGenAI
+from langchain_community.chat_models import ChatOCIGenAI
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
-from langchain.chains import (
-    create_history_aware_retriever,
-    create_retrieval_chain
-)
+from langchain.chains import create_history_aware_retriever, create_retrieval_chain
+
 from langchain.chains.combine_documents import create_stuff_documents_chain
-from langchain_core.output_parsers.string import StrOutputParser
 from langchain_core.prompts import PromptTemplate
-from langchain_core.prompts.chat import (
-    ChatPromptTemplate,
-    HumanMessagePromptTemplate,
-    SystemMessagePromptTemplate
-)
+from langchain_core.prompts.chat import ChatPromptTemplate, SystemMessagePromptTemplate
 
 import components as component
 import services.database as database
@@ -49,7 +42,7 @@ class GenerativeAIService:
             is_stream        = True,  # streaming de tokens si lo deseas
             auth_type        = os.getenv("CON_GEN_AI_AUTH_TYPE"),
             model_kwargs     = {
-                "temperature"       : float(df_modules["AGENT_TEMPERATURE"].values[0]),
+                "temperature" : float(df_modules["AGENT_TEMPERATURE"].values[0]),
             }
         )
 
@@ -79,15 +72,13 @@ class GenerativeAIService:
         )
 
         # 5) Prompt que reformulará la query usando la historia (opcional)
-        # ("system",  str(df_modules["AGENT_PROMPT_SYSTEM"].values[0])),
         reformulation_prompt = ChatPromptTemplate.from_messages([
             ("system",  str(df_modules["AGENT_PROMPT_SYSTEM"].values[0])),
             MessagesPlaceholder(variable_name="history"),
             ("human",   "{input}")
         ])
 
-        # 6) Creamos un retriever "history-aware" que,
-        #    en cada llamada, usará la query reformulada + chat_history
+        # 6) Creamos un retriever "history-aware" que en cada llamada, usará la query reformulada + chat_history
         history_aware_retriever = create_history_aware_retriever(
             llm,
             context_retriever,

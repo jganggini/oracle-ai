@@ -11,9 +11,10 @@
         file_trg_tot_characters  NUMBER DEFAULT 0 NOT NULL,
         file_trg_tot_time        VARCHAR2(8) DEFAULT '00:00:00' NOT NULL,
         file_trg_language        VARCHAR2(3) DEFAULT 'esa' NOT NULL,
+        file_trg_pii             NUMBER DEFAULT 0 NOT NULL,
         file_version             NUMBER DEFAULT 1 NOT NULL,
         file_state               NUMBER DEFAULT 1 NOT NULL,
-        file_date                TIMESTAMP(6) DEFAULT SYSDATE NOT NULL,
+        file_date                TIMESTAMP(6) DEFAULT SYSDATE NOT NULL,        
         CONSTRAINT file_id_pk PRIMARY KEY (file_id),
         CONSTRAINT fk_user FOREIGN KEY (user_id) REFERENCES users(user_id)
         ENABLE

@@ -58,7 +58,7 @@ if 'username' in st.session_state:
         
         selected_modules_id = st.multiselect(
             "How would you like to get started?",
-            options=df_modules["MODULE_ID"].tolist(),
+            options=df_modules["MODULE_ID"].drop_duplicates().tolist(),  # Fix: Apply drop_duplicates before converting to a list
             format_func=lambda module_id: f"{df_modules.loc[df_modules['MODULE_ID'] == module_id, 'MODULE_NAME'].values[0]}",
             default=st.session_state["chat-modules"],
             placeholder="Select a module..."
@@ -174,7 +174,6 @@ if 'username' in st.session_state:
                 # Mostrar JSON
                 st.markdown("**Parameters**")
                 st.json(json_agent[0], expanded=True)
-
             
         
         # Renderizamos el historial previo para UI (sin afectar la memoria interna)
@@ -206,8 +205,6 @@ if 'username' in st.session_state:
                     annotation("Tokens", f"{chat_chat_tokens_message} to {chat_total_tokens_message}", background="#484c54", color="#ffffff")
                 )
                 st.markdown("\n\n")
-
-
 
         # Manejo del input del usuario
         chat_human_prompt_input = st.chat_input("Type your message here...", disabled=(not st.session_state["chat-objects"]))
@@ -262,7 +259,6 @@ if 'username' in st.session_state:
             chat_ai_answer = chain["answer"]
 
             # 4. Calcular tokens (usando la utilidad del llm_model)
-            #    Si tu ChatOCIGenAI no tiene get_token_ids, ajusta la lógica de tokenización
             tokens_ids    = llm.get_token_ids(chat_ai_answer)
             answer_tokens = len(tokens_ids)
             token_rate    = answer_tokens / elapsed_time if elapsed_time > 0 else 0.0

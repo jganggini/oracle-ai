@@ -46,7 +46,7 @@
         'p_a_s_s_w_o_r_d',
         'Joel', 
         'Ganggini', 
-        'joel.ganggini@oracle.com',
+        'joel.ganggini@correo.com',
         '[0, 1, 2, 3, 4, 5]'
     );
     --

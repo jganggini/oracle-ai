@@ -43,3 +43,7 @@
     INSERT INTO models (model_id, model_name, model_type, model_provider)
     VALUES (4, 'meta.llama-3.2-90b-vision-instruct', 'vlm', 'meta');
     --
+    
+    INSERT INTO models (model_id, model_name, model_type, model_provider)
+    VALUES (5, 'meta.llama-3.3-70b-instruct', 'llm', 'meta');
+    --

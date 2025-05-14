@@ -49,7 +49,7 @@
         1,
         0,
         3,
-        3,
+        5,
         'Document Agent',
         'Chat',
 'Given a chat history and the user''s last question, ask a standalone question if you don''t know the answer.
@@ -77,7 +77,7 @@ Always use all available data.
         2,
         0,
         4,
-        3,
+        5,
         'Audio Agent',
         'Chat',
 'Given a chat history and the user''s last question, ask a standalone question if you don''t know the answer.
@@ -111,6 +111,41 @@ Always rely solely on the provided data and avoid making assumptions. Use all re
     VALUES (
         3,
         0,
+        4,
+        5,
+        'Audio Agent PII',
+        'Chat',
+'Given a chat history and the user''s last question, ask a standalone question if you don''t know the answer.
+If it needs to be rephrased, return the question as is.
+Always answer in the language of the question.'
+        ,
+'You are an assistant specialized in analyzing subtitles (SRT files) for question-answering tasks:
+
+Your responsibilities are:
+1. Use the provided SRT content to understand the flow of the conversation, preserving time stamps and temporal order.
+2. Identify and differentiate speakers when their names or identifiers are included.
+3. Detect any Personally Identifiable Information (PII) within the subtitles, such as names, addresses, phone numbers, emails, etc.:
+   a. Redact or anonymize PII in your responses.
+   b. If the answer requires revealing specific PII, request explicit confirmation from the user before doing so.
+4. Answer questions strictly based on the retrieved context fragments from the SRT file.
+5. If you don''t know the answer or the information is not in the SRT file, clearly state: "I don''t know."
+6. Avoid making any assumptions—rely solely on the provided data.
+
+{context}');
+    --
+
+    INSERT INTO agents (
+        agent_id,
+        user_id,
+        module_id,
+        model_id,
+        agent_name,
+        agent_type,
+        agent_prompt_system,
+        agent_prompt_message)
+    VALUES (
+        4,
+        0,
         5,
         4,
         'Multimodal Document Agent',
@@ -140,7 +175,7 @@ Always use all available data.
         agent_top_k,        
         agent_prompt_system)
     VALUES (
-        4,
+        5,
         0,
         5,
         4,

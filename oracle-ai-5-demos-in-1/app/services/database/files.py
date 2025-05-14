@@ -47,6 +47,7 @@ class FileService:
                 A.FILE_TRG_TOT_CHARACTERS,
                 A.FILE_TRG_TOT_TIME,
                 A.FILE_TRG_LANGUAGE,
+                A.FILE_TRG_PII,
                 A.FILE_VERSION,
                 A.FILE_DATE,
                 A.FILE_STATE
@@ -70,19 +71,21 @@ class FileService:
             file_src_size,
             file_src_strategy,
             file_trg_obj_name,
-            file_trg_language
+            file_trg_language,
+            file_trg_pii
         ):
         """
         Inserts or updates a file record in the database and returns the file_id.
 
         Args:
-            file_name (str)          : Name of the file.
-            user_id (int)            : ID of the user.
-            module_id (int)          : ID of the module.
-            file_src_file_name (str) : Source file name.
-            file_src_size (int)      : Size of the source file.
-            file_src_strategy (str)  : Strategy for the source file.
-            file_trg_obj_name (str)  : Target object name.
+            file_name (str)           : Name of the file.
+            user_id (int)             : ID of the user.
+            module_id (int)           : ID of the module.
+            file_src_file_name (str)  : Source file name.
+            file_src_size (int)       : Size of the source file.
+            file_src_strategy (str)   : Strategy for the source file.
+            file_trg_obj_name (str)   : Target object name.
+            file_trg_pii (int)        : PII (Personally Identifiable Information) flag.
 
         Returns:
             tuple: A message and the file_id.
@@ -98,6 +101,7 @@ class FileService:
             WHERE
                 FILE_SRC_FILE_NAME = '{file_src_file_name}'
                 AND USER_ID = {user_id}
+                AND FILE_TRG_PII = {file_trg_pii}
         """
         df = pd.read_sql(check_query, con=self.conn)
 
@@ -139,14 +143,16 @@ class FileService:
                         FILE_SRC_FILE_NAME,
                         FILE_SRC_SIZE,
                         FILE_SRC_STRATEGY,
-                        FILE_TRG_OBJ_NAME
+                        FILE_TRG_OBJ_NAME,
+                        FILE_TRG_PII
                     ) VALUES (
                         {user_id},
                         {module_id},
                         '{file_src_file_name}',
                         '{file_src_size}',
                         '{file_src_strategy}',
-                        '{file_trg_obj_name}'
+                        '{file_trg_obj_name}',
+                        '{file_trg_pii}'
                     ) RETURNING FILE_ID INTO :file_id
                 """, {"file_id": file_id_var})
             self.conn.commit()

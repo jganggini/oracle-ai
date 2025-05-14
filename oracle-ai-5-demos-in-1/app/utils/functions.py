@@ -8,6 +8,7 @@ import base64
 import pandas as pd
 import streamlit as st
 from graphviz import Digraph
+from typing import List, Tuple
 from dotenv import load_dotenv
 
 # Para ChatMessages
@@ -268,3 +269,36 @@ class FunctionService:
             messages.append(HumanMessage(content=user_q))
             messages.append(AIMessage(content=bot_a))
         return messages
+    
+    @staticmethod
+    def parse_srt_blocks(srt_text: str) -> List[Tuple[str, str, str]]:
+        """
+        Parsea bloques de SRT sin asumir cantidad fija de líneas.
+        Retorna una lista de tuplas (index, timestamp, texto).
+        """
+        blocks = []
+        raw_blocks = srt_text.strip().split("\n\n")
+        
+        for block in raw_blocks:
+            lines = block.strip().split("\n")
+            if len(lines) >= 2:
+                idx = lines[0].strip()
+                ts = lines[1].strip()
+                txt = "\n".join(line.strip() for line in lines[2:]).strip()
+                blocks.append((idx, ts, txt))
+        return blocks
+    
+    @staticmethod
+    def normalize_obfuscated_email(text: str) -> str:
+        # Reemplaza "arroba" y "punto"
+        text = re.sub(r"\barroba\b", "@", text, flags=re.IGNORECASE)
+        text = re.sub(r"\bpunto\b", ".", text, flags=re.IGNORECASE)
+
+        # Elimina espacios alrededor de @ y .
+        text = re.sub(r"\s*@\s*", "@", text)
+        text = re.sub(r"\s*\.\s*", ".", text)
+
+        # Limpia espacios múltiples (opcional)
+        text = re.sub(r"\s+", " ", text)
+
+        return text

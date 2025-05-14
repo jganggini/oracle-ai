@@ -7,7 +7,7 @@ from PIL import Image
 import streamlit as st
 import shutil
 
-from langchain_community.chat_models.oci_generative_ai import ChatOCIGenAI
+from langchain_community.chat_models import ChatOCIGenAI
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.runnables import RunnableSerializable
 from langchain_core.output_parsers.string import StrOutputParser

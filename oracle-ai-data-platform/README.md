@@ -210,7 +210,9 @@ Este modelo de datos está diseñado para una plataforma de análisis documental
   <img src="img/data-model.svg">
 </p>
 
-https://www.mermaidchart.com/app/projects/a5976d52-778a-4839-b538-94feed349ce9/diagrams/37f8ba3f-ce9d-4f27-80d8-52fe5154713b/version/v0.1/edit
+<div align="center" style="text-align:center;">
+  Modelo: <a href="https://raw.githubusercontent.com/jganggini/oracle-ai/187534d131828be7e586b4ee0dff4b816d218fde/oracle-ai-data-platform/img/data-model.svg">Mermaidchart</a>
+</div> 
 
 ### Descripción de Tablas y Contenido Inicial
 

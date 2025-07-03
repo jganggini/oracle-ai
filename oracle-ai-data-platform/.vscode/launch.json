@@ -1,0 +1,21 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Streamlit",
+      "type": "debugpy",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/app",
+      "module": "streamlit",
+      "args": [
+        "run",
+        "app.py",
+        "--server.port",
+        "8501"
+      ],
+      "console": "integratedTerminal",
+      "python": "D:\\anaconda3\\envs\\oracle-ai\\python.exe",
+      "envFile": "${workspaceFolder}/app/.env"  // ← aquí al path de tu .env
+    }
+  ]
+}

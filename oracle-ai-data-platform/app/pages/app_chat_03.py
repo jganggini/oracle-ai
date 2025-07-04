@@ -23,13 +23,13 @@ utl_function_service = utils.FunctionService()
 from dotenv import load_dotenv
 load_dotenv()
 
-component.get_login()
+login = component.get_login()
 component.get_footer()
 
 # initialize float feature/capability
 float_init()
 
-if 'username' in st.session_state:
+if login:
     # Header y descripción
     st.header(":material/network_intelligence: Vector Database")
     st.caption("AI Vector Search enables semantic and value-based searches on business data, enhancing LLM performance and RAG use cases securely and efficiently.")
@@ -203,7 +203,7 @@ if 'username' in st.session_state:
                     image_bytes = base64.b64decode(chat_human_prompt_image_message)
                     st.image(image_bytes, use_container_width=True)
 
-            with st.chat_message("ai", avatar="images/avatar/meta.svg"):
+            with st.chat_message("ai", avatar="images/llm_meta.svg"):
                 st.markdown(chat_ai_answer_message)
                 annotated_text(
                     annotation("Rate", chat_tokens_rate_message, background="#484c54", color="#ffffff"),
@@ -272,9 +272,9 @@ if 'username' in st.session_state:
 
             # Muestra la respuesta en la UI
             placeholder = st.empty()
-            with placeholder.chat_message("ai", avatar="images/avatar/meta.svg"):
+            with placeholder.chat_message("ai", avatar="images/llm_meta.svg"):
                 st.markdown(chat_ai_answer)
-
+                
                 # También calculamos los tokens de entrada
                 input_tokens = len(llm.get_token_ids(chat_human_prompt_input))
                 chat_tokens  = input_tokens + answer_tokens

@@ -9,7 +9,7 @@ import utils as utils
 db_user_service = database.UserService()
 utl_function_service = utils.FunctionService()
 
-component.get_login()
+login = component.get_login()
 component.get_footer()
 
 # State mappings
@@ -22,7 +22,7 @@ if "show_form" not in st.session_state:
     st.session_state["form_mode"] = "create"
     st.session_state["selected_group"] = None
 
-if "username" in st.session_state and "user_id" in st.session_state:
+if login:
     st.header(":material/group: User Groups")
     st.caption("Manage user groups.")
 

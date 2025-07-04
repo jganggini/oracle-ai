@@ -10,7 +10,7 @@ db_module_service = database.ModuleService()
 db_agent_service = database.AgentService()
 db_user_service = database.UserService()
 
-component.get_login()
+login = component.get_login()
 component.get_footer()
 
 map_agent_state = {1: "Active", 2: "Inactive", 0: "Delete"}
@@ -21,7 +21,7 @@ if "show_form_agents" not in st.session_state:
     st.session_state["form_mode_agents"] = "create"
     st.session_state["selected_agent"] = None
 
-if "username" in st.session_state and "user_id" in st.session_state:
+if login:
     st.header(":material/smart_toy: Agents")
     st.caption("Manage agents for model.")
 

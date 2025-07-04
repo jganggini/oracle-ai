@@ -15,10 +15,10 @@ map_user_state = {
     0: "Delete"
 }
 
-component.get_login()
+login = component.get_login()
 component.get_footer()
 
-if "username" in st.session_state:
+if login:
     st.header(":material/upload_file: Profile")
     st.caption("Manage profile.")
 

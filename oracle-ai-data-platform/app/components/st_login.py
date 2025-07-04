@@ -81,8 +81,9 @@ def get_login():
     """
     Handle the login process and render the appropriate menu.
     """
-    if 'username' in st.session_state:
-        get_menu(st.session_state['modules'], st.session_state['user'])
+    if all(k in st.session_state for k in ["username", "user", "user_id", "modules", "chat-history", "chat-save"]):
+        get_menu(st.session_state["modules"], st.session_state["user"])
+        return True
     else:
         # Login Form
         with st.form('form-login'):
@@ -153,3 +154,5 @@ def get_login():
                 
                 else:
                     st.error("Invalid username or password", icon=":material/gpp_maybe:")
+        
+        return False

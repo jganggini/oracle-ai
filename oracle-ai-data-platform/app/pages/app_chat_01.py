@@ -16,13 +16,13 @@ select_ai_service = service.SelectAIService()
 db_select_ai_service = database.SelectAIService()
 utl_function_service = utils.FunctionService()
 
-component.get_login()
+login = component.get_login()
 component.get_footer()
 
 # initialize float feature/capability
 float_init()
 
-if 'username' in st.session_state:
+if login:
     # Header and description for the application
     st.header(":material/database_search: Select AI")
     st.caption("This application leverages Retrieval-Augmented Generation (RAG) with Oracle 23ai and Deepseek-R1 to retrieve relevant information from a vector database and generate accurate responses using LLMs.")
@@ -62,7 +62,7 @@ if 'username' in st.session_state:
         # Display chat messages from history on app rerun
         for message in st.session_state["chat-select-ai"]:
             if message["role"] == "ai":
-                with st.chat_message(message["role"], avatar="images/avatar/meta.svg"):
+                with st.chat_message(message["role"], avatar="images/llm_meta.svg"):
                     # Render each section of the stored response
                     annotated_text(annotation("Narrate", message["narrate_time"], background="#484c54", color="#ffffff"))
                     st.markdown(message["narrate"])
@@ -87,7 +87,7 @@ if 'username' in st.session_state:
             st.session_state["chat-select-ai"].append({"role": "human", "content": prompt})
 
             # Create placeholders for progressive updates
-            assistant_message = st.chat_message("ai", avatar="images/avatar/meta.svg")
+            assistant_message = st.chat_message("ai", avatar="images/llm_meta.svg")
             placeholder = assistant_message.empty()
 
             # Build response with consistent formatting

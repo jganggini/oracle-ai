@@ -30,7 +30,7 @@ Si no tiene una cuenta, regístrese en [Oracle Cloud](https://www.oracle.com/clo
   <table align="center">
     <tr style="font-size:medium;">
       <td colspan="4">Oracle Cloud</td>
-      <td colspan="4">AI Stack</td>
+      <td colspan="5">AI Stack</td>
     </tr>
     <tr align="center" >
       <td><img src="img/oci-generative-ai.svg" width="50" height="50"></td>

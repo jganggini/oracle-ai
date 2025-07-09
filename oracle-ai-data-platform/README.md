@@ -33,7 +33,7 @@ Oracle AI Data Platform es una solución integral que permite gestionar y analiz
 ## Requisitos Previos
 
 ### 1. Cuenta en Oracle Cloud Infrastructure (OCI)
-Si no tiene una cuenta, regístrese en [Oracle Cloud](https://www.oracle.com/cloud/).
+Si no tiene una cuenta, regístrese en [Oracle Cloud](https://www.oracle.com/cloud/free/).
 
 ✅ Recomendación: Para garantizar compatibilidad con todos los servicios requeridos, elige una región como `us-chicago-1`.
 
@@ -70,47 +70,50 @@ Si no tiene una cuenta, regístrese en [Oracle Cloud](https://www.oracle.com/clo
   </table>
 </div>
 
-#### a) Autonomous Database
-- Despliegue una instancia de Autonomous Database en OCI.
+#### a) Create Compartment
+- En el terminal cree un compartment para su proyecto llamado `oracle-ai-demo`.
 
-#### b) Object Storage Bucket
-- Cree un bucket en OCI Object Storage.
+#### b) Autonomous Database
+- Despliegue una instancia de Autonomous Database 23ai llamado `ADW23AI`.
 
-#### c) Configurar Políticas de IAM
+#### c) Object Storage Bucket
+- Cree un bucket en OCI Object Storage llamado `ORACLE-AI-RAG`.
+
+#### d) Configurar Políticas de IAM
 Se deben configurar las siguientes políticas para permitir el acceso adecuado:
 
-##### c.1) OCI Document Understanding
+##### d.1) OCI Document Understanding
 ```plaintext
-Allow any-user to manage ai-service-document-family in tenancy
+Allow any-user to manage ai-service-document-family in compartment oracle-ai-demo
 ```
 Read more: [About Document Understanding Policies](https://docs.oracle.com/en-us/iaas/Content/document-understanding/using/about_document-understanding_policies.htm).
 
-##### c.2) OCI Speech
+##### d.2) OCI Speech
 ```plaintext
-Allow any-user to manage ai-service-speech-family in tenancy
-Allow any-user to read tag-namespaces in tenancy
-Allow any-user to inspect tag-namespaces in tenancy
+Allow any-user to manage ai-service-speech-family in compartment oracle-ai-demo
+Allow any-user to read tag-namespaces in compartment oracle-ai-demo
+Allow any-user to inspect tag-namespaces in compartment oracle-ai-demo
 ```
 Read more: [About Speech Policies](https://docs.oracle.com/en-us/iaas/Content/speech/using/policies.htm).
 
-##### c.3) OCI Generative AI
+##### d.3) OCI Generative AI
 ```plaintext
-Allow any-user to manage generative-ai-family in tenancy
+Allow any-user to manage generative-ai-family in compartment oracle-ai-demo
 ```
 Read more: [Getting Access to Generative AI](https://docs.oracle.com/en-us/iaas/Content/generative-ai/iam-policies.htm).
 
-##### c.4) Bucket
+##### d.4) Bucket
 ```plaintext
-Allow any-user to read buckets in tenancy
-Allow any-user to manage object-family in tenancy
-Allow any-user to read objectstorage-namespaces in tenancy
+Allow any-user to read buckets in compartment oracle-ai-demo
+Allow any-user to manage object-family in compartment oracle-ai-demo
+Allow any-user to read objectstorage-namespaces in compartment oracle-ai-demo
 ```
 
-##### c.5) All Resources (Optional)
+##### d.5) All Resources (Optional)
 Si estás realizando pruebas o laboratorios en una cuenta trial de Oracle Cloud, puedes usar temporalmente la siguiente política para facilitar el acceso sin restricciones:
 
 ```plaintext
-Allow any-user to manage all-resources in tenancy
+Allow any-user to manage all-resources in compartment oracle-ai-demo
 ```
 
 Esta política otorga permisos completos a todos los usuarios autenticados sobre todos los recursos en el tenancy, por lo que debe utilizarse únicamente en entornos controlados, personales y no compartidos. Se recomienda eliminarla una vez finalizadas las pruebas para evitar acciones accidentales o un consumo innecesario de recursos que puedan agotar tu crédito trial.

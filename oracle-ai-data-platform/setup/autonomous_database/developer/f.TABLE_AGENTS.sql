@@ -32,7 +32,7 @@
     END;
     /
     --
-    
+
     INSERT INTO agents (
         agent_id,
         agent_model_id,
@@ -43,32 +43,6 @@
         agent_prompt_message)
     VALUES (
         1,
-        7,
-        'Document Agent',
-        'Performs contextual question-answering on unstructured documents.',
-        'Chat',
-'Given a chat history and the user''s last question, ask a standalone question if you don''t know the answer.
-If it needs to be rephrased, return the question as is.
-Always answer in the language of the question.'
-        ,
-'You are an assistant for question-answering tasks.
-Please use only the following retrieved context fragments to answer the question.
-If you don''t know the answer, say you don''t know.
-Always use all available data.
-
-{context}');
-    --
-
-    INSERT INTO agents (
-        agent_id,
-        agent_model_id,
-        agent_name,
-        agent_description,
-        agent_type,
-        agent_prompt_system,
-        agent_prompt_message)
-    VALUES (
-        2,
         7,
         'SRT Audio Agent',
         'Analyzes subtitle (SRT) files for time-stamped dialogue-based Q&A.',
@@ -101,7 +75,7 @@ Always rely solely on the provided data and avoid making assumptions. Use all re
         agent_prompt_system,
         agent_prompt_message)
     VALUES (
-        3,
+        2,
         7,
         'PII Anonymizer Agent',
         'Detects and anonymizes Personally Identifiable Information (PII) from transcripts.',
@@ -136,7 +110,7 @@ Always apply these rules consistently for both SRT and TXT input formats.
         agent_prompt_system,
         agent_prompt_message)
     VALUES (
-        4,
+        3,
         7,
         'Image Analysis Agent',
         'Performs question-answering over extracted visual data from images.',
@@ -164,7 +138,7 @@ Always use all available data.
         agent_top_k,        
         agent_prompt_system)
     VALUES (
-        5,
+        4,
         7,
         'Image OCR Analysis Agent',
         'Extracts text from images using Optical Character Recognition (OCR) and formats it as Markdown.',
@@ -189,6 +163,32 @@ Always use all available data.
 
 ### Reminder:
 Your task is to provide the most accurate transcription possible. Return `**[Unreadable or Blank Document]**` only if absolutely no content can be transcribed.');
+    --
+    
+    INSERT INTO agents (
+        agent_id,
+        agent_model_id,
+        agent_name,
+        agent_description,
+        agent_type,
+        agent_prompt_system,
+        agent_prompt_message)
+    VALUES (
+        5,
+        7,
+        'Document Agent',
+        'Performs contextual question-answering on unstructured documents.',
+        'Chat',
+'Given a chat history and the user''s last question, ask a standalone question if you don''t know the answer.
+If it needs to be rephrased, return the question as is.
+Always answer in the language of the question.'
+        ,
+'You are an assistant for question-answering tasks.
+Please use only the following retrieved context fragments to answer the question.
+If you don''t know the answer, say you don''t know.
+Always use all available data.
+
+{context}');
     --
 
     SELECT agent_id_seq.NEXTVAL FROM DUAL;

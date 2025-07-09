@@ -38,7 +38,7 @@ if login:
     language     = st.session_state["language"]
     user_id      = st.session_state["user_id"]
     chat_save    = st.session_state["chat-save"]
-    df_files     = db_file_service.get_all_files_cache(user_id)
+    df_files     = db_file_service.get_all_files_cache(user_id)[lambda df: df["MODULE_VECTOR_STORE"] == 1]
     df_agents    = db_agent_service.get_all_agents_cache(user_id)[lambda df: df["AGENT_TYPE"] == "Chat"]
 
     # Aseguramos que el session_id se inicialice una sola vez

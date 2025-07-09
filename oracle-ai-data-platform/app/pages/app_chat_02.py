@@ -53,7 +53,7 @@ if login:
         # Display chat messages from history on app rerun
         for message in st.session_state["chat-select-ai-rag"]:
             if message["role"] == "ai":
-                with st.chat_message(message["role"], avatar="images/llm_meta.svg"):
+                with st.chat_message(message["role"], avatar="images/llm_aix.svg"):
                     # Render each section of the stored response
                     annotated_text(annotation("Narrate", message["narrate_time"], background="#484c54", color="#ffffff"))
                     st.markdown(message["narrate"])
@@ -70,7 +70,7 @@ if login:
             st.session_state["chat-select-ai-rag"].append({"role": "human", "content": prompt})
 
             # Create placeholders for progressive updates
-            assistant_message = st.chat_message("ai", avatar="images/llm_meta.svg")
+            assistant_message = st.chat_message("ai", avatar="images/llm_aix.svg")
             placeholder = assistant_message.empty()
 
             try:

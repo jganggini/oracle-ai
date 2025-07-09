@@ -118,7 +118,7 @@ Esta política otorga permisos completos a todos los usuarios autenticados sobre
 ### 3. Requisitos de la Máquina Local
 - **Sistema Operativo:** Windows o macOS.
 - **Anaconda (Conda):** Descargue e instale desde [Anaconda](https://www.anaconda.com/products/distribution).
-- **Git:** Descargue e instale [Git](https://git-scm.com/).
+- **Visual Studio Code (VSCode):** Descargue e instale [Git](https://code.visualstudio.com/download).
 
 ## Instalación del Proyecto
 

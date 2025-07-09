@@ -13,7 +13,7 @@ from presidio_anonymizer import AnonymizerEngine
 from presidio_analyzer.predefined_recognizers.phone_recognizer import PhoneRecognizer
 
 # Initialize services
-config               = oci.config.from_file()
+config               = oci.config.from_file(profile_name=os.getenv('CON_OCI_PROFILE_NAME', 'DEFAULT'))
 bucket_service       = service.BucketService()
 utl_function_service = utils.FunctionService()
 db_file_service      = database.FileService()

@@ -145,18 +145,19 @@ Oracle AI Data Platform es una solución integral que permite gestionar y analiz
   
   - Ingrese a ➡️ `Compute` ➡️ `Instances`
   - Seleccione la `Instance` que creaste en el paso anterior.
-  - Ingrese a ➡️ `Security` ➡️ `Securitu Lists` ➡️ `Default Security List for vcn-oracle-ai-demo` ➡️ `Security rules`
+  - Ingrese a ➡️ `Instance details` ➡️ `Virtual cloud network`
+  - Ingrese a ➡️ `Security` ➡️ `Security Lists` ➡️ `Default Security List for vcn-oracle-ai-demo` ➡️ `Security rules`
   - `[Add Ingress Rules]`
     - Source Type: `CIDR`
     - Source CIDR: `0.0.0.0/0`
     - IP Protocol: `TCP`
     - Destination Port Range: `3389`
-    - Description: `RDD`
+    - Description: `RPD`
   - `[+ Another Ingress Rules]`
     - Source Type: `CIDR`
     - Source CIDR: `0.0.0.0/0`
     - IP Protocol: `TCP`
-    - Destination Port Range: `8051`
+    - Destination Port Range: `8501`
     - Description: `App`
   - `[Add Ingress Rules]`  
 

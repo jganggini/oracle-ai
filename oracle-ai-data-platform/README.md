@@ -131,6 +131,7 @@ Oracle AI Data Platform es una solución integral que permite gestionar y analiz
         - Shape name: `VM.Standard.E4.Flex`
           - Number of OCPUs: `4`
           - Amount of memory (GB): `64`
+        - `[Select Shape]`
     - Network:
       - Primary network: `Create new virtual cloud network`
         - New virtual cloud network name: `vcn-oracle-ai-demo`
@@ -145,7 +146,7 @@ Oracle AI Data Platform es una solución integral que permite gestionar y analiz
   
   - Ingrese a ➡️ `Compute` ➡️ `Instances`
   - Seleccione la `Instance` que creaste en el paso anterior.
-  - Ingrese a ➡️ `Instance details` ➡️ `Virtual cloud network`
+  - Ingrese a ➡️ `Instance details` ➡️ `Virtual cloud network` ➡️ `vcn-oracle-ai-demo`
   - Ingrese a ➡️ `Security` ➡️ `Security Lists` ➡️ `Default Security List for vcn-oracle-ai-demo` ➡️ `Security rules`
   - `[Add Ingress Rules]`
     - Source Type: `CIDR`

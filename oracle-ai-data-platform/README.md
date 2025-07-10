@@ -162,7 +162,7 @@ Oracle AI Data Platform es una solución integral que permite gestionar y analiz
 
   #### f) Configuring Policies in Identity
   
-  - Ingrese a ➡️ `Identity` ➡️ `Policies`.
+  - Ingrese a ➡️ `Identity` ➡️ `Policies`
   - Se deben configurar las siguientes políticas para permitir el acceso adecuado:
 
     #### f.1) OCI Document Understanding
@@ -233,6 +233,17 @@ Oracle AI Data Platform es una solución integral que permite gestionar y analiz
   </div>
 
   💡 `Nota`: Los pasos de instalación pueden variar dependiendo del sistema operativo que estés utilizando. Esta guía está enfocada principalmente en sistemas Windows.
+
+  - Remote Desktop `(Windows)`:
+      - Presiona `[Win + R]`
+      - Escribir: `mstsc` y `[Aceptar]`
+
+        ![Win + R: mstsc](img/vm-mstsc.png)
+        
+      - Ingrese a `Remote Desktop` ➡️
+        - PC: `<Public IP Adress>`
+        - User: `OPC`
+        - Passowrd: `<Initial password>`
 
   #### a) Anaconda (Conda)
   
@@ -348,7 +359,7 @@ Oracle AI Data Platform es una solución integral que permite gestionar y analiz
   - Ingrese a ➡️ `Identity` ➡️ `profile`
   - Seleccione su usuario.
   - Ingrese a ➡️ `Tokens and keys` ➡️ `Generate API Key pair` ➡️ `[Download private key]`
-    - `[Add]`
+    - Seleccione `[Add]`
     - Seleccione `[Copy]`
     
     - Cree el archivo `config` en:

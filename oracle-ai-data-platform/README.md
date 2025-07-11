@@ -115,7 +115,7 @@ Oracle AI Data Platform es una solución integral que permite gestionar y analiz
   
   Si deseas desplegar y probar el proyecto en la nube, puedes crear temporalmente una instancia de cómputo en Oracle Cloud, lo cual es útil para ejecutar la aplicación en un entorno alojado. Alternativamente, puedes optar por ejecutar el proyecto en tu propia máquina local.
 
-  - Ingrese a ➡️ `Compute` ➡️ `Instances`.
+  - Ingrese a ➡️ `Compute` ➡️ `Instances`
   - Cree una `Instance` para el proyecto.
     - Name: `app`
     - Placement:
@@ -266,7 +266,7 @@ Oracle AI Data Platform es una solución integral que permite gestionar y analiz
 
         ![Win + R: SystemPropertiesAdvanced](img/vm-SystemPropertiesAdvanced.png)
       
-      - Ingrese a `System Properties` ➡️ `Startup` ➡️ `[Environment Variables]`
+      - Ingrese a `System Properties` ➡️ `Advanced` ➡️ `[Environment Variables]`
       - Ingrese a `Environment Variables` ➡️ `[Path]` ➡️ `[Edit...]`
       - Ingrese a `Edit enviroment variable` ➡️ `[New]`
 
@@ -339,7 +339,7 @@ Oracle AI Data Platform es una solución integral que permite gestionar y analiz
       ```
     - Copie el contenido de la carpeta `oracle-ai-data-platform`.
 
-  #### e) Wallet de Autonomous Database 23ai (ADW23ai)
+  #### e) Wallet on Autonomus Database 23ai (ADW23ai)
   
   - Ingrese a ➡️ `Autonomous Database`
   - Seleccione el `Autonomous Database` que creaste en el paso anterior.
@@ -356,11 +356,11 @@ Oracle AI Data Platform es una solución integral que permite gestionar y analiz
 
     ![Wallet](img/vm-wallet-adw23ai.png)
 
-  #### f) Generate API pey pair (API Key)
+  #### f) Generate API Key
 
   - Ingrese a ➡️ `Identity` ➡️ `profile`
   - Seleccione su usuario.
-  - Ingrese a ➡️ `Tokens and keys` ➡️ `Generate API Key pair` ➡️ `[Download private key]`
+  - Ingrese a ➡️ `Tokens and keys` ➡️ `Add API Key` ➡️ `Generate API Key pair` ➡️ `[Download private key]`
     - Seleccione `[Add]`
     - Seleccione `[Copy]`
     
@@ -404,6 +404,7 @@ Oracle AI Data Platform es una solución integral que permite gestionar y analiz
   💡 `Nota`: Asegúrate de haber editado previamente el archivo `.env` con tus datos.
 
   ```cmd
+  conda activate
   cd oracle-ai-data-platform
   cd setup
   python setup.py

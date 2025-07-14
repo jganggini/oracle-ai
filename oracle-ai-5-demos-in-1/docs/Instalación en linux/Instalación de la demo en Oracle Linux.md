@@ -69,7 +69,7 @@ pip3 install oci python-dotenv oracledb
 
 ## Autenticación
 
-### Autenticación mediante la cli, creación de API keys y creaicón del config
+### Autenticación mediante la cli, creación de API keys y creación del config
 
 Para autenticarnos, ejecutaremos
 

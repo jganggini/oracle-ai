@@ -29,7 +29,7 @@ El paso a paso que describe el despliegue de los servicios está disponible en e
 
 [![Watch the video](./images/Creación%20y%20preparación%20de%20servicios.png)](https://youtu.be/Kj1Rd52-6cY?list=PLMUWTQHw13gbqqVHaCid3gUBIlvfVKaBu&t=279)
 
-> ❗ Si se selecciona Oracle Linux, es importante descargar la key ssh para poder conectarnos luego. Asegurese de descargar las keys en el paso 3: Networking.
+> ❗ Si se selecciona Oracle Linux, es importante descargar la key ssh para poder conectarnos luego. Asegúrese de descargar las keys en el paso 3: Networking.
 
 ![image](./images/Add%20SSH%20keys.png)
 

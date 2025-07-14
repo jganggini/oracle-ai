@@ -29,14 +29,17 @@ El paso a paso que describe el despliegue de los sservicios está disponible en 
 
 [![Watch the video](./images/Creación%20y%20preparación%20de%20servicios.png)](https://youtu.be/Kj1Rd52-6cY?list=PLMUWTQHw13gbqqVHaCid3gUBIlvfVKaBu&t=279)
 
-> ❗ Si se selecciona Oracle Linux, es importante descargar la key ssh para poder conectarnos luego. Asegurese de descargar las keys en el paso 3: Networking
+> ❗ Si se selecciona Oracle Linux, es importante descargar la key ssh para poder conectarnos luego. Asegurese de descargar las keys en el paso 3: Networking.
 
 ![image](./images/Add%20SSH%20keys.png)
 
+Se descargara un archivo con el formato ssh-key-0000-00-00.key. Esto nos permitirá conectarnos a la instancia en el siguiente paso.
 
 ## Conexión a la instancia
 
 La siguiente documentación describe cómo realizar la conexión a un sistema **Oracle Linux 7**.
+
+Cuando la instancia creada se encuentre en estado running, podemos realizar la conexión siguiendo el siguiente tutorial.
 
 [Conexión a la instancia linux remota (desde linux o mac)](./Conexión%20a%20la%20instancia%20linux%20remota%20(desde%20linux%20o%20mac).md)
 

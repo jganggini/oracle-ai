@@ -1,6 +1,6 @@
 # Despliegue en Oracle Linux
 
-![linux](./images/image%202.pngtux.png)
+![linux](./images/tux.png)
 
 Este documento describe los pasos necesarios para instalar y configurar el proyecto `Oracle AI 5 Demos en 1` disponible en [GitHub](https://github.com/jganggini/oracle-ai/tree/main/oracle-ai-5-demos-in-1) en Oracle Linux. 
 

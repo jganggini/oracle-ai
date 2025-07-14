@@ -25,9 +25,7 @@ Y garantizar el acceso a los siguientes servicios:
 - OCI Speech
 - OCI Generative AI
 
-## Creación de la instancia
-
-Para la creación de la instancia está disponible el siguiente tutorial. En el minuto 4:39 se realiza la instalación con Windows, sin embargo, es posible seleccionar Oracle Linux.
+El paso a paso que describe el despliegue de los sservicios está disponible en el siguiente tutorial. En el minuto 4:39 se realiza la instalación con Windows, sin embargo, es posible seleccionar Oracle Linux.
 
 [![Watch the video](./images/Creación%20y%20preparación%20de%20servicios.png)](https://youtu.be/Kj1Rd52-6cY?list=PLMUWTQHw13gbqqVHaCid3gUBIlvfVKaBu&t=279)
 

@@ -144,7 +144,7 @@ Enter a name for your key [oci_api_key]:
 Public key written to: /home/opc/.oci/oci_api_key_public.pem
 ```
 
-Aquí depemos tipear tal cual `N/A`
+Aquí debemos tipear tal cual `N/A`
 
 ```bash
 Enter a passphrase for your private key ("N/A" for no passphrase):

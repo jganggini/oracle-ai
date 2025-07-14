@@ -33,7 +33,7 @@ El paso a paso que describe el despliegue de los servicios está disponible en e
 
 ![image](./images/Add%20SSH%20keys.png)
 
-Se descargara un archivo con el formato ssh-key-0000-00-00.key. Esto nos permitirá conectarnos a la instancia en el siguiente paso.
+Se descargará un archivo con el formato ssh-key-0000-00-00.key. Esto nos permitirá conectarnos a la instancia en el siguiente paso.
 
 ## Conexión a la instancia
 

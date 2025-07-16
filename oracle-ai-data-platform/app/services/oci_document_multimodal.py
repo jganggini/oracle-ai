@@ -29,7 +29,7 @@ utl_function_service = utils.FunctionService()
 load_dotenv()
 
 # Initialize the service
-db_module_service = database.ModuleService()
+db_agent_service = database.AgentService()
 
 class DocumentMultimodalService:
         
@@ -233,14 +233,14 @@ class DocumentMultimodalService:
     @staticmethod
     def get_extraction(user_id, agent_id, output_directory):
         # Filter modules by user and conditions
-        df_agents = db_module_service.get_modules_cache(user_id, force_update=True)[lambda df: (df["MODULE_VECTOR_STORE"] == 1) & (df["AGENT_TYPE"].isin(['Extraction'])) & (df["AGENT_ID"].isin([agent_id]))]
-
+        df_agents = df_agents = db_agent_service.get_all_agents_cache(user_id, force_update=True)[lambda df: (df["AGENT_ID"].isin([agent_id]))]
+        
         # Initialize the LLM model with configuration from the selected agent
         llm = ChatOCIGenAI(
-            model_id         = str(df_agents["MODEL_NAME"].values[0]),
+            model_id         = str(df_agents["AGENT_MODEL_NAME"].values[0]),
             service_endpoint = os.getenv("CON_GEN_AI_SERVICE_ENDPOINT"),
             compartment_id   = os.getenv("CON_COMPARTMENT_ID"),
-            provider         = str(df_agents["MODEL_PROVIDER"].values[0]),
+            provider         = str(df_agents["AGENT_MODEL_PROVIDER"].values[0]),
             is_stream        = False,
             auth_type        = os.getenv("CON_GEN_AI_AUTH_TYPE"),
             model_kwargs = {

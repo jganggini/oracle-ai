@@ -715,7 +715,8 @@ if "username" in st.session_state and "user_id" in st.session_state:
                                             file_src_strategy,
                                             file_trg_obj_name,
                                             file_trg_language,
-                                            file_trg_pii
+                                            file_trg_pii,
+                                            file_description
                                         )
                                         component.get_toast(msg, icon=":material/database:")
 

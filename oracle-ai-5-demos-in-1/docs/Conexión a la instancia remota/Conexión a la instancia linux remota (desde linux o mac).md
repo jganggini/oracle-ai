@@ -1,3 +1,9 @@
+# Conexión a la instancia linux remota desde linux o mac
+
+El siguiente documento describe los pasos necesarios para conectarse a una instancia remota de Oracle Linux desde un sistema operativo macOS o Linux.
+
+Para conectarnos a la instancia remota podemos usar la terminal de nuestra preferencia. 
+
 Es necesario cambiar los permisos del archivo que contiene la key privada descargada previamente en la creación de la instancia. El nombre de la key descargada sigue el formato *ssh-key-YYYY-MM-DD.key.*
 
 Reemplace *ssh-key-0000-00-00.key* por el nombre de su key
@@ -5,7 +11,7 @@ Reemplace *ssh-key-0000-00-00.key* por el nombre de su key
 chmod 600 ssh-key-0000-00-00.key
 ```
 
-
+TQIQTp1*[W}R;
 Reemplace *ssh-key-0000-00-00.key* por el nombre de su key y 1.1.1.1 por la ip pública de su instancia
 
 ```bash
@@ -13,6 +19,8 @@ ssh -i ssh-key-0000-00-00.key opc@1.1.1.1
 ```
 
 La conexión es exitosa si la terminal muestra un prompt parecido al siguiente
+
+TQIQTp1*[W}R;
 
 ```
 [opc@…]

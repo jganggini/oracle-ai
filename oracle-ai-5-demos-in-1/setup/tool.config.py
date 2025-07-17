@@ -5,7 +5,7 @@ import sys
 try:
     # Default: C:\Users\jeggg\.oci\config
     # # Cargar la configuración desde el archivo por defecto (por lo general: ~/.oci/config)
-    config = oci.config.from_file()
+    config = oci.config.from_file(profile_name=os.getenv('CON_PROFILE_NAME'))
 
     # Variables requeridas en el archivo de configuración
     required_keys = ['user', 'fingerprint', 'tenancy', 'region', 'key_file']

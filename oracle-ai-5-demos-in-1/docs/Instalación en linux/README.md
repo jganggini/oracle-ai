@@ -41,7 +41,7 @@ La siguiente documentación describe cómo realizar la conexión a un sistema **
 
 Cuando la instancia creada se encuentre en estado running, podemos realizar la conexión siguiendo el siguiente tutorial.
 
-[Conexión a la instancia linux remota (desde linux o mac)](./Conexión%20a%20la%20instancia%20linux%20remota%20(desde%20linux%20o%20mac).md)
+[Conexión a la instancia linux remota (desde linux o mac)](../Conexión%20a%20la%20instancia%20remota/Conexión%20a%20la%20instancia%20linux%20remota%20(desde%20linux%20o%20mac).md)
 
 ## Instalación de la demo
 

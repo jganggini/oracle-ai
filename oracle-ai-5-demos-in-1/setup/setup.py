@@ -7,9 +7,11 @@
     ---------------------------------------------
 """
 import os
-import sys
-import subprocess
 import shutil
+import subprocess
+import sys
+
+from dotenv import load_dotenv
 
 # Ruta absoluta o relativa al archivo .env
 file_path = os.path.dirname(__file__)
@@ -183,6 +185,7 @@ def exec(user, file_name, message):
             print(f'[Error]:\n\n{e}')
             sys.exit(1)
 
+
 def main():
     print(f'\n                                                       [ SETUP ][ ANACONDA ]')
     print(f'----------------------------------------------------------------------------')
@@ -197,11 +200,11 @@ def main():
           f'[OK] PIP INSTALL PYTHON-DOTENV IN CONDA BASE..................[ CONDA_BASE ]')
     
     # Cargar variables del archivo .env
-    from dotenv import load_dotenv
     load_dotenv(dotenv_path=env_path)
     
     # CONFIG: CONDA
     con_conda_env_name    = os.getenv('CON_CONDA_ENV_NAME')
+    
     # ADW23ai: Admin
     con_adb_adm_user_name = os.getenv('CON_ADB_ADM_USER_NAME')
     # ADW23ai: Developer

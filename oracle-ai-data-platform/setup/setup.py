@@ -197,7 +197,7 @@ def main():
           f'[OK] PIP INSTALL PYTHON-DOTENV IN CONDA BASE..................[ CONDA_BASE ]')
     
     # Cargar variables del archivo .env
-    from dotenv import load_dotenv
+
     load_dotenv(dotenv_path=env_path)
     
     # CONFIG: CONDA

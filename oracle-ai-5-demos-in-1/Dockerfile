@@ -16,16 +16,16 @@ RUN ./Miniconda3-latest-Linux-x86_64.sh -b
 RUN export PATH=$PATH:/root/miniconda3/bin
 RUN echo 'export PATH=$PATH:/root/miniconda3/bin' >> ~/.bashrc && source ~/.bashrc
 
-RUN git clone https://github.com/jganggini/oracle-ai.git
+RUN git clone https://github.com/jganggini/oracle-ai.git -b feature/dockerizing_the_demo
 RUN cd oracle-ai/oracle-ai-5-demos-in-1/
 
 WORKDIR /oracle-ai/oracle-ai-5-demos-in-1/setup
 
-RUN source /root/.env
-RUN conda create -n $CON_CONDA_ENV_NAME python=3.10 -y
-RUN conda activate $CON_CONDA_ENV_NAME
-RUN conda install -c conda-forge pip -y
-RUN pip install -r requirements.txt
+RUN source .env
+# RUN conda create -n $CON_CONDA_ENV_NAME python=3.10 -y
+# RUN conda activate $CON_CONDA_ENV_NAME
+# RUN conda install -c conda-forge pip -y
+# RUN pip install -r requirements.txt
 
 COPY ./setup/entrypoint.sh /root/entrypoint.sh
 

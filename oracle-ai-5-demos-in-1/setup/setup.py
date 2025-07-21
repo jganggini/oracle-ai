@@ -190,15 +190,6 @@ def main():
     print(f'\n                                                       [ SETUP ][ ANACONDA ]')
     print(f'----------------------------------------------------------------------------')
     
-    conda(f'conda --version', 
-          f'[OK] CHECK CONDA.............................................[ CHECK_CONDA ]')
-
-    conda(f'conda run -n base pip install --force-reinstall oci oracledb --upgrade --user', 
-          f'[OK] PIP INSTALL OCI & ORACLEDB IN CONDA BASE.................[ CONDA_BASE ]')
-
-    conda(f'conda run -n base pip install --force-reinstall python-dotenv --no-warn-script-location --upgrade --user', 
-          f'[OK] PIP INSTALL PYTHON-DOTENV IN CONDA BASE..................[ CONDA_BASE ]')
-    
     # Cargar variables del archivo .env
     load_dotenv(dotenv_path=env_path)
     
@@ -209,21 +200,6 @@ def main():
     con_adb_adm_user_name = os.getenv('CON_ADB_ADM_USER_NAME')
     # ADW23ai: Developer
     con_adb_dev_user_name = os.getenv('CON_ADB_DEV_USER_NAME')
-
-    conda(f'conda remove --name {con_conda_env_name} --all -y', 
-          f'[OK] CONDA REMOVE......................................[ CONDA_ENVIRONMENT ]')
-          
-    conda(f'conda create -n {con_conda_env_name} python=3.10 -y', 
-          f'[OK] CONDA CREATE ENVIRONMENT..........................[ CONDA_ENVIRONMENT ]')
-    
-    conda(f'conda run -n {con_conda_env_name} conda install -c conda-forge python-graphviz -y', 
-          f'[OK] CONDA INSTALL GRAPHVIZ................................[ CONDA_INSTALL ]')
-    
-    conda(f'conda run -n {con_conda_env_name} pip install -r requirements.txt', 
-          f'[OK] PIP INSTALL REQUIREMENTS..........................[ CONDA_ENVIRONMENT ]')
-    
-    print(f'\n                                                     [ VALIDATION ][ TOOLS ]')
-    print(f'----------------------------------------------------------------------------')
 
     conda(f'python tool.config.py', 
           f'[OK] CONFIG FILE..............................................[ VALID_TOOL ]')

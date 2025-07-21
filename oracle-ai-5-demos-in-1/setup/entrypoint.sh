@@ -40,3 +40,5 @@ fi
 unzip -o ./wallet.zip -d ../app/wallet/
 
 python set_environment.py
+
+python setup.py

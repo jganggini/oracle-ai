@@ -7,9 +7,13 @@
     ---------------------------------------------
 """
 import os
-import sys
-import subprocess
 import shutil
+import subprocess
+import sys
+
+import oci
+import oracledb
+from dotenv import load_dotenv
 
 # Ruta absoluta o relativa al archivo .env
 file_path = os.path.dirname(__file__)
@@ -66,12 +70,9 @@ def conda(command, message):
             print(f'[Error]: {error_output}')
             print(f'[Command]: {command}')
             sys.exit(1)
+    
 
-#
 def exec(user, file_name, message):
-    import oci
-    import oracledb
-    from dotenv import load_dotenv
 
     load_dotenv(dotenv_path=env_path)
     
@@ -200,8 +201,6 @@ def main():
 
     load_dotenv(dotenv_path=env_path)
     
-    # CONFIG: CONDA
-    con_conda_env_name    = os.getenv('CON_CONDA_ENV_NAME')
     # ADW23ai: Admin
     con_adb_adm_user_name = os.getenv('CON_ADB_ADM_USER_NAME')
     # ADW23ai: Developer

@@ -28,7 +28,7 @@ echo "Generating wallet for Autonomous Database with ID: $autonomous_database_id
 
 sleep 1m
 
-oci db autonomous-database generate-wallet --autonomous-database-id $autonomous_database_id --password $wallet_password --file ./wallet.zip
+oci db autonomous-database generate-wallet --autonomous-database-id "$autonomous_database_id" --password "$wallet_password" --file ./wallet.zip
 if [ $? -ne 0 ]; then
     echo "Failed to generate wallet. Please check your Autonomous Database ID and try again."
     exit 1

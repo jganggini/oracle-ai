@@ -35,13 +35,4 @@ if [ $? -ne 0 ]; then
 fi
 unzip -o ./wallet.zip -d ../app/wallet/
 
-echo "Checking if the connection to the database is successful..."
-python3 tool.autonomous_database.py
-if [ $? -eq 0 ]; then
-    echo "Connection to the database was successful."
-else
-    echo "Failed to connect to the database. Please check your wallet and connection settings."
-    exit 1
-fi
-
-echo "Connection to the database was successful. The wallet has been created and is ready to use."
+python set_environment.py

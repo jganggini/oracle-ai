@@ -75,8 +75,9 @@ def exec(user, file_name, message):
 
     load_dotenv(dotenv_path=env_path)
     
-    # Default: C:\Users\jeggg\.oci\config
-    config = oci.config.from_file()
+    # config
+    os.chdir(os.path.normpath(os.path.abspath(os.path.join(os.getcwd(), "..", "app"))))
+    config = oci.config.from_file(file_location=os.getenv("CON_ADB_OCI_CONFIG"))
 
     # ADW23ai: Admin
     con_adb_adm_user_name       = os.getenv('CON_ADB_ADM_USER_NAME')
@@ -96,19 +97,12 @@ def exec(user, file_name, message):
     con_adb_dev_c_model           = os.getenv('CON_ADB_DEV_C_MODEL')
 
     # ADW23ai: Wallet
-    con_adb_wallet_location     = os.getenv('CON_ADB_WALLET_LOCATION')
     con_adb_wallet_password     = os.getenv('CON_ADB_WALLET_PASSWORD')
-
-    # Bucket
-    con_adb_buk_namespacename   = os.getenv('CON_ADB_BUK_NAMESPACENAME')
-    con_adb_buk_name            = os.getenv('CON_ADB_BUK_NAME')
-
     # Generative AI
     con_gen_ai_region           = config['region']
     con_gen_ai_service_endpoint = os.getenv('CON_GEN_AI_SERVICE_ENDPOINT')
     con_gen_ai_emb_model_url    = os.getenv('CON_GEN_AI_EMB_MODEL_URL')
     con_gen_ai_emb_model_id     = os.getenv('CON_GEN_AI_EMB_MODEL_ID')
-    con_gen_ai_chat_model_id    = os.getenv('CON_GEN_AI_CHAT_MODEL_ID')
 
     # Leer el archivo SQL
     with open(os.path.join(file_path, 'autonomous_database', user, file_name), 'r') as file:
@@ -169,8 +163,8 @@ def exec(user, file_name, message):
         error_msg = str(e)
         # Verificar si se produjo el error ORA-01920 al intentar crear el usuario
         if "ORA-01920" in error_msg and "CREATE_USER" in file_name:
-            respuesta = input("The user already exists. Do you want to delete it to continue? (S/N): ")
-            if respuesta.strip().lower() in ("", "s", "si", "y", "yes"):
+            respuesta = input('The user already exists. Do you want to delete it to continue? (S/N): ')
+            if respuesta.strip().lower() in ('', 's', 'si', 'y', 'yes'):
                 # Ejecutar el script para eliminar el usuario (asegúrate de que 'a.DROP_USER.sql' exista en la carpeta correspondiente)
                 exec('admin', 'a.DROP_USER.sql', '[OK][A] DROP USER DEVELOPER......................................[DROP_USER]')
                 # Intentar nuevamente crear el usuario

@@ -12,7 +12,7 @@ env_path = os.path.join(os.getcwd(), ".env")
 load_dotenv(dotenv_path=env_path)
 
 # Se asume que la configuración OCI está correcta
-config = oci.config.from_file()
+config = oci.config.from_file(file_location=os.getenv("CON_ADB_OCI_CONFIG"))
 
 # Obtener las variables de entorno requeridas
 namespace_env  = os.getenv('CON_ADB_BUK_NAMESPACENAME')

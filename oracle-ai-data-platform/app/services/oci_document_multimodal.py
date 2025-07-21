@@ -20,7 +20,8 @@ import services.database as database
 import utils as utils
 
 # Initialize services
-config               = oci.config.from_file(profile_name=os.getenv('CON_OCI_PROFILE_NAME', 'DEFAULT'))
+os.chdir(os.path.normpath(os.path.abspath(os.path.join(os.getcwd(), "..", "app"))))
+config               = oci.config.from_file(file_location=os.getenv("CON_ADB_OCI_CONFIG"))
 bucket_service       = service.BucketService()
 file_service         = database.FileService()
 doc_service          = database.DocService()

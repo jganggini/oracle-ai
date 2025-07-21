@@ -39,7 +39,7 @@ def connect_to_db(user, password, dsn, config_dir, wallet_location, wallet_passw
 
 if __name__ == "__main__":
     # Cargar las variables de entorno desde el archivo .env
-    load_dotenv()
+    load_dotenv("../app/.env")
     # Obtener las variables de entorno necesarias
     user = os.getenv('CON_ADB_ADM_USER_NAME')
     password = os.getenv('CON_ADB_ADM_PASSWORD')

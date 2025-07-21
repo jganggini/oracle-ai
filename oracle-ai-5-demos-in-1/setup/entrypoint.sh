@@ -1,5 +1,7 @@
 
-oci session authenticate --no-browser --profile-name DEFAULT
+oci session authenticate --no-browser --config-file ~/.oci/config --profile DEFAULT
+
+oci iam region list --all 
 
 echo "A connection between the app and the database is required."
 echo "Please, create a safe password for the wallet. It must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter and one number. Avoid using special characters."
@@ -8,7 +10,6 @@ if [[ -z "$wallet_password" ]]; then
     echo "Wallet password cannot be empty. Exiting."
     exit 1
 fi
-echo "Creating wallet with the provided password..."    
 
 read -p "Enter the Autonomous Database OCID: " autonomous_database_id
 if [[ -z "$autonomous_database_id" ]]; then
@@ -24,9 +25,8 @@ if [[ "$confirmation" != "A" ]]; then
     exit 1
 fi
 
-echo "Generating wallet for Autonomous Database with ID: $autonomous_database_id and password $wallet_password..."
+echo "Generating wallet for Autonomous Database with ID: $autonomous_database_id..."
 
-sleep 1m
 
 oci db autonomous-database generate-wallet --autonomous-database-id "$autonomous_database_id" --password "$wallet_password" --file ./wallet.zip
 if [ $? -ne 0 ]; then

@@ -9,8 +9,10 @@ if [[ "$confirmation" != "A" ]]; then
     exit 1
 fi
 
+echo "Wait for 10 minutes to ensure the authentication is complete..."
+sleep 10m
 echo "Listing available regions..."
-oci iam region list --all 
+oci iam region list --all --debug
 
 echo "A connection between the app and the database is required."
 echo "Please, create a safe password for the wallet. It must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter and one number. Avoid using special characters."

@@ -1,6 +1,15 @@
 
 oci session authenticate --no-browser --config-file ~/.oci/config --profile DEFAULT
 
+echo "Before continuing, please paste the following public key in the Oracle Cloud Console for your Autonomous Database:"
+cat ~/.oci/oci_api_key_public.pem
+read -p "Press A once you have pasted the public key in the Oracle Cloud Console: " confirmation
+if [[ "$confirmation" != "A" ]]; then
+    echo "You must paste the public key in the Oracle Cloud Console before proceeding. Exiting."
+    exit 1
+fi
+
+echo "Listing available regions..."
 oci iam region list --all 
 
 echo "A connection between the app and the database is required."
@@ -17,13 +26,6 @@ if [[ -z "$autonomous_database_id" ]]; then
     exit 1
 fi
 
-echo "Before continuing, please paste the following public key in the Oracle Cloud Console for your Autonomous Database:"
-cat ~/.oci/oci_api_key_public.pem
-read -p "Press A once you have pasted the public key in the Oracle Cloud Console: " confirmation
-if [[ "$confirmation" != "A" ]]; then
-    echo "You must paste the public key in the Oracle Cloud Console before proceeding. Exiting."
-    exit 1
-fi
 
 echo "Generating wallet for Autonomous Database with ID: $autonomous_database_id..."
 

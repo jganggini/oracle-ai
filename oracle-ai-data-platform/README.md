@@ -84,8 +84,8 @@ Oracle AI Data Platform es una solución integral que permite gestionar y analiz
   
   - Ingrese a ➡️ `Autonomous Database` ➡️ `Create Autonomous Database`.
   - Cree un `Data Warehouse` o `Transaction Processing` para el proyecto.
-    - Display name: `ADW23AI`
-    - Database name: `ADW23AI`
+    - Display name: `ADB23AI`
+    - Database name: `ADB23AI`
     - Compartment: `oracle-ai-demo`
     - Workload type: `Data Warehouse` o `Transaction Processing`.
     - Database configuration:
@@ -339,7 +339,7 @@ Oracle AI Data Platform es una solución integral que permite gestionar y analiz
       ```
     - Copie el contenido de la carpeta `oracle-ai-data-platform`.
 
-  #### e) Wallet on Autonomus Database 23ai (ADW23ai)
+  #### e) Wallet on Autonomus Database 23ai (ADB23ai)
   
   - Ingrese a ➡️ `Autonomous Database`
   - Seleccione el `Autonomous Database` que creaste en el paso anterior.

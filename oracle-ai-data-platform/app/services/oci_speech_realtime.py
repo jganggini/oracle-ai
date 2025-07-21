@@ -109,8 +109,7 @@ async def start_realtime_session(display_transcription_final, display_transcript
     def message_callback(message):
         print(f"Received message: {message}")
 
-    os.chdir(os.path.normpath(os.path.abspath(os.path.join(os.getcwd(), "..", "app"))))
-    config = from_file(file_location=os.getenv("CON_ADB_OCI_CONFIG"))
+    config = from_file()
 
     queue = asyncio.Queue()
 

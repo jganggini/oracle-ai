@@ -12,11 +12,9 @@ class ClientService:
     _instance = None
 
     def __new__(cls):
-        os.chdir(os.path.normpath(os.path.abspath(os.path.join(os.getcwd(), "..", "app"))))
-        
         if cls._instance is None:
             cls._instance = super(ClientService, cls).__new__(cls)
-            cls._instance.config = oci.config.from_file(file_location=os.getenv("CON_ADB_OCI_CONFIG"))
+            cls._instance.config = oci.config.from_file(profile_name=os.getenv('CON_OCI_PROFILE_NAME', 'DEFAULT'))
             cls._instance.client = oci.object_storage.ObjectStorageClient(cls._instance.config)
         return cls._instance
 

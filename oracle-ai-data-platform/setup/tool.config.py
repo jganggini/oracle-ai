@@ -3,9 +3,9 @@ import os
 import sys
 
 try:
-    # config
-    os.chdir(os.path.normpath(os.path.abspath(os.path.join(os.getcwd(), "..", "app"))))
-    config = oci.config.from_file(file_location=os.getenv("CON_ADB_OCI_CONFIG"))
+    # Default: C:\Users\jeggg\.oci\config
+    # # Cargar la configuración desde el archivo por defecto (por lo general: ~/.oci/config)
+    config = oci.config.from_file(profile_name=os.getenv('CON_OCI_PROFILE_NAME', 'DEFAULT'))
 
     # Variables requeridas en el archivo de configuración
     required_keys = ['user', 'fingerprint', 'tenancy', 'region', 'key_file']

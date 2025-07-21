@@ -75,9 +75,8 @@ def exec(user, file_name, message):
 
     load_dotenv(dotenv_path=env_path)
     
-    # config
-    os.chdir(os.path.normpath(os.path.abspath(os.path.join(os.getcwd(), "..", "app"))))
-    config = oci.config.from_file(file_location=os.getenv("CON_ADB_OCI_CONFIG"))
+    # Default: C:\Users\jeggg\.oci\config
+    config = oci.config.from_file(profile_name=os.getenv('CON_OCI_PROFILE_NAME', 'DEFAULT'))
 
     # ADW23ai: Admin
     con_adb_adm_user_name       = os.getenv('CON_ADB_ADM_USER_NAME')

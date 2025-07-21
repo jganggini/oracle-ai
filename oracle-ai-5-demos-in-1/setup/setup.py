@@ -207,7 +207,7 @@ def main():
     conda(f'python tool.bucket.py', 
           f'[OK] BUCKET ACCESS............................................[ VALID_TOOL ]')
     
-    conda(f'python tool.autonomos.connection.py', 
+    conda(f'python tool/autonomos_connection.py', 
           f'[OK] AUTONOMOUS DATABASE CONNECTION...........................[ VALID_TOOL ]')
 
     print(f'\n                                            [ SETUP ][ AUTONOMOUS DATABASE ]')
